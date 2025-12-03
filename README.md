@@ -14,16 +14,15 @@
 
 <hr style="border:0;height:2px;background:linear-gradient(90deg,#00eaff,#ff00ff);">
 
----
+
 ## 🧬 OVERVIEW
 
 This repository contains a collection of **Core Java projects** built using clean, modular, and industry-standard **Object-Oriented Programming (OOP)** concepts.
 
 All examples are beginner-friendly, readable, and ideal for understanding  
 **Java fundamentals + real-world OOP structure**.
-```
 
-
+---
 ## 🧠 TECH STACK
 
 | Area | Description |
@@ -33,24 +32,19 @@ All examples are beginner-friendly, readable, and ideal for understanding
 | 📦 Collections | Data handling |
 | 📁 File I/O | Read & Write operations |
 
-
+---
 
 
 ## ⚙️ HOW TO RUN
 
 1. Clone the repository  
-```
+
 git clone https://github.com/yadnyesh-96/JAVA-Projects.git
-```
+
 2. Open any project folder  
 3. Compile Java files
-```
 javac *.java
-```
 4. Run the program  
-```
 java Main
-```
-## 🤝 CONTRIBUTING
 
-```
+## 🤝 CONTRIBUTING
