@@ -1,7 +1,3 @@
-```md
-<!-- ======================================================= -->
-<!--                    CORE JAVA OOP PROJECTS                -->
-<!-- ======================================================= -->
 
 <h1 align="center" style="
   font-weight:700;
@@ -18,11 +14,7 @@
 
 <hr style="border:0;height:2px;background:linear-gradient(90deg,#00eaff,#ff00ff);">
 
-```
-
 ---
-
-```md
 ## 🧬 OVERVIEW
 
 This repository contains a collection of **Core Java projects** built using clean, modular, and industry-standard **Object-Oriented Programming (OOP)** concepts.
@@ -30,38 +22,6 @@ This repository contains a collection of **Core Java projects** built using clea
 All examples are beginner-friendly, readable, and ideal for understanding  
 **Java fundamentals + real-world OOP structure**.
 ```
-
----
-
-
-## ✨ FEATURES
-
-### 🟪 OBJECT-ORIENTED PRINCIPLES
-- Encapsulation  
-- Inheritance  
-- Polymorphism  
-- Abstraction  
-- Interfaces  
-
-### 🟦 CORE JAVA CAPABILITIES
-- Collections Framework  
-- Exception Handling  
-- File I/O  
-- Modular Class Structures  
-- Structured Project Layout  
-```
-
----
-
-
-## 🧱 ASCII HEADER (STYLE)
-
-╔════════════════════════════════╗
-║    CORE JAVA · OOP PROJECTS    ║
-╚════════════════════════════════╝
-```
-
----
 
 
 ## 🧠 TECH STACK
@@ -74,60 +34,23 @@ All examples are beginner-friendly, readable, and ideal for understanding
 | 📁 File I/O | Read & Write operations |
 
 
----
-
-## 📌 PROJECT CARDS (TEXT UI)
-
-🟣 **Project 01**  
-— Demonstrates classes, objects, constructors, and basic OOP usage.
-
-🟠 **Project 02**  
-— Focus on inheritance, overriding, polymorphism, and reusability.
-
-🟢 **Project 03**  
-— Collections Framework usage with List, Set, Map.
-
-🔵 **Project 04**  
-— Exception handling, custom exceptions, and robust program flow.
-
----
 
 
 ## ⚙️ HOW TO RUN
 
 1. Clone the repository  
 ```
-
 git clone https://github.com/yadnyesh-96/JAVA-Projects.git
-
 ```
 2. Open any project folder  
 3. Compile Java files
 ```
-
 javac *.java
-
 ```
 4. Run the program  
 ```
-
 java Main
-
 ```
-```
-
----
-
-```md
 ## 🤝 CONTRIBUTING
 
 ```
-
-✔ Fork the repo
-✔ Create a new branch
-✔ Add your Java project or improvements
-✔ Submit a pull request
-
-
-
----
