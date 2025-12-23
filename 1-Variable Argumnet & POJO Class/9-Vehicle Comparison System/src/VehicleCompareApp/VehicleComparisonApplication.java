@@ -12,7 +12,7 @@ public class VehicleComparisonApplication {
 			i1.ShowDatabase(Vd);
 			
 			i1.ShowMileage(Vd);
-			i1.AvrageMilagevehicle(Vd);
+			i1.AvrageMilagevehicle(Vd)
 			
 			
 		}
