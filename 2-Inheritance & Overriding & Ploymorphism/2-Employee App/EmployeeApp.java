@@ -9,7 +9,7 @@ class Employee{
 	Employee(int id, String name, double baseSalary){
 		this.id=id;
 		this.name=name;
-		this.baseSalary=baseSalary;
+		this.baseSalary=baseSalary
 	}
 	
 	double calculatesalary(){
