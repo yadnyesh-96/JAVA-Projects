@@ -53,7 +53,7 @@ public class ShoppingDiscount {
                 System.out.println("Enter sale type for clothing (e.g., seasonalSale or regular):");
                 String saleType = sc.nextLine().trim();
                 // default to regular if user enters nothing
-                if (saleType.isEmpty()) saleType = "regular";
+                if (saleType.isEmpty()) saleType  "regular";
                 p1[i] = new Clothing(name, price, saleType);
             } else { // item == 3
                 p1[i] = new Groceries(name, price);
