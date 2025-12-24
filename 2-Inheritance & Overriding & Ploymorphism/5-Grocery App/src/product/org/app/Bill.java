@@ -29,13 +29,13 @@ public class Bill {
 //		System.out.println("ID\tItem Name\t\tQuantity\tRate");
 //		System.out.println("--\t---------\t\t--------\t--------");
 //		for (int i = 0; i < p.length; i++) {
-//			System.out.print(
+//			System.out.println(
 //					p[i].getProID() + "\t" + p[i].getProName() + "\t\t" + p[i].getQuantity() + "\t" + p[i].getRate());
 //		}
 //		System.out.println("--\t---------\t\t--------\t--------");
-//		System.out.print("Bill Without GST\t\t\t=" + calBillwithoutGST());
-//		System.out.print("-----------------------------------------------");
-//		System.out.print("Bill With (18%)GST\t\t\t=" + calBilGST());
+//		System.out.println("Bill Without GST\t\t\t=" + calBillwithoutGST());
+//		System.out.println("-----------------------------------------------");
+//		System.out.println("Bill With (18%)GST\t\t\t=" + calBilGST());
 
 		System.out.println("---------------------------------------------------------------");
 		System.out.printf("%-5s %-20s %-10s %-10s%n", "ID", "Item Name", "Quantity", "Rate");
