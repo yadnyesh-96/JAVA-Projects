@@ -21,7 +21,40 @@ public class ArrayListApplication {
 			System.out.println("5.Check the size of ArrayList");
 			System.out.println("6.Retrive data from ArrayList");
 			
-			int choice =sc.nextInt();
+			System.out.println("\n\nEnter your Choice:");
+			int choice=sc.nextInt();
+			
+			switch(choice) {
+			case 1:
+					System.out.println("Enter the value to add in collection:");
+					int val=sc.nextInt();
+					boolean b=v.add(val);
+					if(b) {
+						System.out.println("Value is Added");
+					}else {
+						System.out.println("Value is not added");
+					}
+					
+				break;
+			
+			case 2:
+				break;
+			
+			case 3:
+				break;
+				
+			case 4:
+				break;
+			
+			case 5:
+				break;
+				
+			case 6:
+				break;
+				
+			default :
+				System.out.println("Wrong choice !");
+			}
 			
 		} while (true);
 		
