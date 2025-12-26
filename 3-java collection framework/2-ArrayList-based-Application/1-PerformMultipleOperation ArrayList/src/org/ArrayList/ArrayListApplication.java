@@ -57,9 +57,20 @@ public class ArrayListApplication {
 				break;
 				
 			case 4:
+					System.out.println("Enter the value to delete from collection");
+					data =sc.nextInt();
+					int index=al.indexOf(data);
+					if(index!=-1) {
+						al.remove(index);
+						System.out.println("Data removed");
+					}else {
+						System.out.println("Data not found");
+					}
+					
 				break;
 			
 			case 5:
+					System.out.println("Size of collection is: "+al.size());
 				break;
 				
 			case 6:
