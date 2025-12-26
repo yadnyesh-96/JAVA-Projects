@@ -28,7 +28,7 @@ public class ArrayListApplication {
 			case 1:
 					System.out.println("Enter the value to add in collection:");
 					int val=sc.nextInt();
-					boolean b=v.add(val);
+					boolean b=al.add(val);
 					if(b) {
 						System.out.println("Value is Added");
 					}else {
@@ -38,6 +38,11 @@ public class ArrayListApplication {
 				break;
 			
 			case 2:
+					Iterator i=al.iterator();
+					while(i.hasNext()) {
+						Object obj=i.next();
+						System.out.println(obj);
+					}
 				break;
 			
 			case 3:
