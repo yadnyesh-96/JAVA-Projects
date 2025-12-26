@@ -46,6 +46,14 @@ public class ArrayListApplication {
 				break;
 			
 			case 3:
+					System.out.println("Enter the Value to serach in Collection:");
+					int data=sc.nextInt();
+					boolean c=al.contains(data);
+					if(c) {
+						System.out.println("Data present in Collection");
+					}else {
+						System.out.println("Data is not found !");
+					}
 				break;
 				
 			case 4:
