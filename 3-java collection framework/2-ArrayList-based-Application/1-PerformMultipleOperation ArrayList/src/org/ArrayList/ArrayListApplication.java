@@ -37,7 +37,7 @@ public class ArrayListApplication {
 				} else {
 					System.out.println("Value is not added");
 				}
-
+				System.out.println("-----------------------------------");
 				break;
 
 			case 2:
@@ -46,6 +46,7 @@ public class ArrayListApplication {
 					Object obj = i.next();
 					System.out.println(obj);
 				}
+				System.out.println("-----------------------------------");
 				break;
 
 			case 3:
@@ -57,6 +58,7 @@ public class ArrayListApplication {
 				} else {
 					System.out.println("Data is not found !");
 				}
+				System.out.println("-----------------------------------");
 				break;
 
 			case 4:
@@ -69,7 +71,7 @@ public class ArrayListApplication {
 				} else {
 					System.out.println("Data not found");
 				}
-
+				System.out.println("-----------------------------------");
 				break;
 
 			case 5:
