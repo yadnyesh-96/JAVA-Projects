@@ -12,7 +12,10 @@ public class ProductsApplication {
 		v.add(p2);
 		v.add(p3);
 		
-		
+		for(Object obj:v) {
+			Product p=(Product)obj;
+			System.out.print(p.getId()+"\t"+p.getName()+"\t"+p.getPrice()+"\n");
+		}
 		
 	}
 }
