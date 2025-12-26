@@ -19,7 +19,7 @@ public class ArrayListApplication {
 			System.out.println("3.Search element in ArrayList");
 			System.out.println("4.Delete element from ArrayList");
 			System.out.println("5.Check the size of ArrayList");
-			System.out.println("6.Retrive data from ArrayList");
+			System.out.println("6.Exit");
 			
 			System.out.println("\n\nEnter your Choice:");
 			int choice=sc.nextInt();
@@ -74,6 +74,7 @@ public class ArrayListApplication {
 				break;
 				
 			case 6:
+					System.exit(0);
 				break;
 				
 			default :
