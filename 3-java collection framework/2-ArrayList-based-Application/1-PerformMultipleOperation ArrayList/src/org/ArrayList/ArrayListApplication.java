@@ -71,6 +71,7 @@ public class ArrayListApplication {
 				} else {
 					System.out.println("Data not found");
 				}
+				
 				System.out.println("-----------------------------------");
 				break;
 
