@@ -16,13 +16,14 @@ public class ArrayListApplication {
 		ArrayList al = new ArrayList();
 
 		do {
+			System.out.println("-----------------------------------");
 			System.out.println("1.Add new element ");
 			System.out.println("2.View All elements");
 			System.out.println("3.Search element in ArrayList");
 			System.out.println("4.Delete element from ArrayList");
 			System.out.println("5.Check the size of ArrayList");
 			System.out.println("6.Exit");
-
+			System.out.println("-----------------------------------");
 			System.out.println("\n\nEnter your Choice:");
 			int choice = sc.nextInt();
 
