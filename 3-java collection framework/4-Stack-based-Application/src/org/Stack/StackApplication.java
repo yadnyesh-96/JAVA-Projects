@@ -20,6 +20,9 @@ public class StackApplication {
 			
 			switch (choice) {
 			case 1:
+					System.out.println("Eneter the element to push on stack:");
+					int data=sc.nextInt();
+					st.push(data);
 				break;
 			
 			case 2:
