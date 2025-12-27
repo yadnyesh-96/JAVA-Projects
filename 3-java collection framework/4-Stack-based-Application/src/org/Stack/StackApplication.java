@@ -14,7 +14,8 @@ public class StackApplication {
 			System.out.println("3.SIZE of Stack");
 			System.out.println("4.PEEK data from Stack");
 			System.out.println("5.SEARCH data from Stack");
-			System.out.println("6. EXIT ... ");
+			System.out.println("6.VIEW data from Stack");
+			System.out.println("7. EXIT ... ");
 			System.out.println("\n\nEnter your choice:");
 			int choice=sc.nextInt();
 			
@@ -55,6 +56,14 @@ public class StackApplication {
 				break;
 				
 			case 6:
+					Iterator i=st.iterator();
+					while(i.hasNext()) {
+						Object obj1=i.next();
+						System.out.print(obj1+" ");
+					}
+				break;
+				
+			case 7:
 					System.exit(0);
 				break;
 				
