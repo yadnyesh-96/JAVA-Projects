@@ -20,12 +20,18 @@ public class StackApplication {
 			
 			switch (choice) {
 			case 1:
-					System.out.println("Eneter the element to push on stack:");
+					System.out.println("Eneter the element to push from Stack :");
 					int data=sc.nextInt();
 					st.push(data);
 				break;
 			
 			case 2:
+					System.out.println("Enter the element to POP/REMOVE from Stack :");
+					data=sc.nextInt();
+					int index =st.search(data);
+					if(index!=-1) {
+						Object obj=st.pop();
+					}
 				break;
 				
 			case 3:
