@@ -37,8 +37,8 @@ public class StackApplication {
 				break;
 			
 			case 4:
-				Object obj=st.peek();
-				System.out.println("Peeked Data From Stack :"+obj);
+				Object obj1=st.peek();
+				System.out.println("Peeked Data From Stack :"+obj1);
 				break;
 				
 			case 5:
@@ -55,8 +55,8 @@ public class StackApplication {
 			case 6:
 					Iterator i=st.iterator();
 					while(i.hasNext()) {
-						Object obj1=i.next();
-						System.out.print(obj1+" ");
+						Object obj11=i.next();
+						System.out.print(obj11+" ");
 					}
 					System.out.println("\n");
 				break;
