@@ -13,8 +13,8 @@ public class StackApplication {
 			System.out.println("2.POP/REMOVE data from Stack");
 			System.out.println("3.SIZE of Stack");
 			System.out.println("4.PEEK data from Stack");
-			System.out.println("4.SEARCH data from Stack");
-			System.out.println("5. EXIT ... ");
+			System.out.println("5.SEARCH data from Stack");
+			System.out.println("6. EXIT ... ");
 			System.out.println("\n\nEnter your choice:");
 			int choice=sc.nextInt();
 			
@@ -47,7 +47,15 @@ public class StackApplication {
 					System.out.println("Eneter element to search from Stack");
 					data=sc.nextInt();
 					int found=st.search(data);
-					
+					if(found!=-1) {
+						System.out.println("Data is found in Stack: "+found);
+					}else {
+						System.out.println("Data is not Found !");
+					}
+				break;
+				
+			case 6:
+					System.exit(0);
 				break;
 				
 			default:
