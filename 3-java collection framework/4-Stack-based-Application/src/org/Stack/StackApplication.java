@@ -27,12 +27,9 @@ public class StackApplication {
 				break;
 			
 			case 2:
-					System.out.println("Enter the element to POP/REMOVE from Stack :");
-					data=sc.nextInt();
-					int index =st.search(data);
-					if(index!=-1) {
+					
 						Object obj=st.pop();
-					}
+					
 				break;
 				
 			case 3:
@@ -61,6 +58,7 @@ public class StackApplication {
 						Object obj1=i.next();
 						System.out.print(obj1+" ");
 					}
+					System.out.println("\n");
 				break;
 				
 			case 7:
