@@ -14,8 +14,30 @@ public class StackApplication {
 			System.out.println("3.SIZE of Stack");
 			System.out.println("4.PEEK data from Stack");
 			System.out.println("4.SEARCH data from Stack");
+			System.out.println("5. EXIT ... ");
 			System.out.println("\n\nEnter your choice:");
 			int choice=sc.nextInt();
+			
+			switch (choice) {
+			case 1:
+				break;
+			
+			case 2:
+				break;
+				
+			case 3:
+				break;
+			
+			case 4:
+				break;
+				
+			case 5:
+				break;
+				
+			default:
+				System.out.println("Invalid Input choose another one ");
+				
+			}
 		}while(true);
 
 	}
