@@ -35,12 +35,19 @@ public class StackApplication {
 				break;
 				
 			case 3:
+					System.out.println("SIZE of Stack is : "+st.size());
 				break;
 			
 			case 4:
+				Object obj=st.peek();
+				System.out.println("Peeked Data From Stack :"+obj);
 				break;
 				
 			case 5:
+					System.out.println("Eneter element to search from Stack");
+					data=sc.nextInt();
+					int found=st.search(data);
+					
 				break;
 				
 			default:
