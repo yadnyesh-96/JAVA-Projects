@@ -24,7 +24,10 @@ public class EmployeeApplication {
 		System.out.print("ID\tName\tSalary\n");
 		Iterator i=v.iterator();
 		
-		
+		while(i.hasNext()) {
+			Object obj=i.next();
+			Employee e=(Employee)obj;
+			System.out.print(e.getId()+"\t"+e.getName()+"\t"+e.getSalary()+"\n");
 		}
 		
 
