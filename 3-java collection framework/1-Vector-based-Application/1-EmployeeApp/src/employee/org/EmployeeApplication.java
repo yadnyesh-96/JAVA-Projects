@@ -22,7 +22,7 @@ public class EmployeeApplication {
 		v.add(e6);
 		
 		System.out.print("ID\tName\tSalary\n");
-		//Iterator i=v.iterator();
+		Iterator i=v.iterator();
 		
 		while(i.hasNext()) {
 			Object obj=i.next();
