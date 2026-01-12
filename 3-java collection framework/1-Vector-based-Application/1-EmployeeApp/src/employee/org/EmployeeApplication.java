@@ -27,7 +27,7 @@ public class EmployeeApplication {
 		while(i.hasNext()) {
 			Object obj=i.next();
 			Employee e=(Employee)obj;
-			System.out.print(e.getId()+"\t"+e.getName()+"\t"+e.getSalary()+"\n");
+		//	System.out.print(e.getId()+"\t"+e.getName()+"\t"+e.getSalary()+"\n");
 		}
 		
 
