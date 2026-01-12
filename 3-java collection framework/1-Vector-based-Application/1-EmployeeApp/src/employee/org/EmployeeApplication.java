@@ -2,7 +2,7 @@ package employee.org;
 import java.util.*;
 public class EmployeeApplication {
 
-	public static void main(String[] args) {
+	{
 		Scanner sc=new Scanner(System.in);
 		
 		Vector v=new Vector();
