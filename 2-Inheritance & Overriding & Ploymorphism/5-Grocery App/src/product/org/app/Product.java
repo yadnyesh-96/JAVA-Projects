@@ -1,6 +1,13 @@
 package product.org.app;
 
-p
+public class Product {
+	private int pid;
+	private String pname;
+	private int quantity;
+	private double rate;
+	
+	public void setProID(int pid) {
+		this.pid=pid;
 	}
 	public int getProID() {
 		return pid;
