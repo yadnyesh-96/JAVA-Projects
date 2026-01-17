@@ -10,7 +10,13 @@ public class Product {
 		this.pid=pid;
 	}
 	public int getProID() {
-		\
+		return pid;
+	}
+	
+	public void setProName(String pname) {
+		this.pname=pname;
+	}
+	public String getProName() {
 		return pname;
 	}
 	public void setQuantity(int quantity) {
