@@ -17,7 +17,11 @@ public class Product {
 		this.pname=pname;
 	}
 	public String getProName() {
-		
+		return pname;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity=quantity;
+	}
 	public int getQuantity() {
 		return quantity;
 	}
