@@ -60,13 +60,13 @@ class Intern extends Employee{
 }
 
 
-// public class EmployeeApp{
-// 	public static void main(String x[]){
-// 		Scanner sc=new Scanner(System.in);
+public class EmployeeApp{
+	public static void main(String x[]){
+		Scanner sc=new Scanner(System.in);
 		
-// 		System.out.println("== Store Upto 10 Employee's Data ==\n\n");
+		System.out.println("== Store Upto 10 Employee's Data ==\n\n");
 		
-// 		Employee em1[]=new Employee[10];
+		Employee em1[]=new Employee[10];
 		
 		for(int i=0; i<10; i++){
 			int Id=i+1;
