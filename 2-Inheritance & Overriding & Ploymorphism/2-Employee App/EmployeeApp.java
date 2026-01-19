@@ -104,12 +104,12 @@ public class EmployeeApp{
 				System.out.println("Number of Projects :");
 				int p=sc.nextInt();
 				
-				sc.nextLine(); //buffer clear
-				em1[i]=new Developer(Id,nm,bs,p);
+			// 	sc.nextLine(); //buffer clear
+			// 	em1[i]=new Developer(Id,nm,bs,p);
 				
-			}else{
-				em1[i]=new Intern(Id,nm,bs);
-			}
+			// }else{
+			// 	em1[i]=new Intern(Id,nm,bs);
+			// }
 			
 		}
 		
