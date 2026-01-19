@@ -6,15 +6,7 @@ class Employee{
 	String name;
 	double baseSalary;
 	
-	Employee(int id, String name, double baseSalary){
-		this.id=id;
-		this.name=name;
-		this.baseSalary=baseSalary;
-	}
 	
-	double calculatesalary(){
-		return baseSalary;
-	}
 }
 
 class Manager extends Employee{
