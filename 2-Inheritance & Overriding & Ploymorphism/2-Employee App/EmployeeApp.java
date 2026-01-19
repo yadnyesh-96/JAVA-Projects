@@ -127,10 +127,10 @@ public class EmployeeApp{
 			
 			if(sal>60000)countAbove60++;
 			
-		// 	System.out.println("ID 	   :"+e.id);
-		// 	System.out.println("Name   :"+e.name);
-		// 	System.out.println("Salary :"+sal);
-		// }
+			System.out.println("ID 	   :"+e.id);
+			System.out.println("Name   :"+e.name);
+			System.out.println("Salary :"+sal);
+		}
 		
 		System.out.println("\n===== Employee with Maximum Salary =====");
         System.out.println("Name: " + em2.name);
