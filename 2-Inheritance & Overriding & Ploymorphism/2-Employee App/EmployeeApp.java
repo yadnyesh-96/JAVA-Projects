@@ -3,19 +3,19 @@ import java.util.*;
 class Employee{
 	
 	int id;
-	// String name;
-	// double baseSalary;
+	String name;
+	double baseSalary;
 	
-// 	Employee(int id, String name, double baseSalary){
-// 		this.id=id;
-// 		this.name=name;
-// 		this.baseSalary=baseSalary;
-// 	}
+	Employee(int id, String name, double baseSalary){
+		this.id=id;
+		this.name=name;
+		this.baseSalary=baseSalary;
+	}
 	
-// 	double calculatesalary(){
-// 		return baseSalary;
-// 	}
-// }
+	double calculatesalary(){
+		return baseSalary;
+	}
+}
 
 class Manager extends Employee{
 	
