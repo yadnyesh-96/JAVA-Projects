@@ -75,21 +75,7 @@ public class EmployeeApp{
 			System.out.println("A) Manager  B) Developer C) Intern");
 			System.out.println("Select the Employee Post:");
 			String type=sc.nextLine();
-			
-			String nm;
-			if(type.equalsIgnoreCase("Manager")){
-				System.out.println("Enter "+type+" Name: ");
-				nm=sc.nextLine();
-			}else if(type.equalsIgnoreCase("Developer")){
-				System.out.println("Enter "+type+" Name: ");
-				nm=sc.nextLine();
-			}else{
-				System.out.println("Enter "+type+" Name: ");
-				nm=sc.nextLine();
-			}
-			
-			System.out.println("Enter Base Salary :");
-			double bs=sc.nextDouble();
+			();
 			sc.nextLine(); //buffer
 			
 			if(type.equalsIgnoreCase("Manager")){
