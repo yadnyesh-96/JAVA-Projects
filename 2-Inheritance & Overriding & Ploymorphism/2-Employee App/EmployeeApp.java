@@ -96,20 +96,6 @@ public class EmployeeApp{
 				System.out.println("Team Size :");
 				int team=sc.nextInt();
 				
-				sc.nextLine(); //buffer
-				
-				em1[i]=new Manager(Id,nm,bs,team);
-			
-			}else if(type.equalsIgnoreCase("Developer")){
-				System.out.println("Number of Projects :");
-				int p=sc.nextInt();
-				
-				sc.nextLine(); //buffer clear
-				em1[i]=new Developer(Id,nm,bs,p);
-				
-			}else{
-				em1[i]=new Intern(Id,nm,bs);
-			}
 			
 		}
 		
