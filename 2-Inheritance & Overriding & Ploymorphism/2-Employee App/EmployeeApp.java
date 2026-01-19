@@ -132,11 +132,6 @@ public class EmployeeApp{
 			System.out.println("Salary :"+sal);
 		}
 		
-		System.out.println("\n===== Employee with Maximum Salary =====");
-        System.out.println("Name: " + em2.name);
-        System.out.println("Salary: " + maxSal);
-
-        System.out.println("\nEmployees earning above 60,000: " + countAbove60);
 		
 	}
 }
