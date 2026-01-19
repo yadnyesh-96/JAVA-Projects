@@ -60,7 +60,23 @@ class Intern extends Employee{
 }
 
 
-public cla
+public class EmployeeApp{
+	public static void main(String x[]){
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("== Store Upto 10 Employee's Data ==\n\n");
+		
+		Employee em1[]=new Employee[10];
+		
+		for(int i=0; i<10; i++){
+			int Id=i+1;
+			System.out.println(Id+"- Enter the Detail's of Employee\n");
+			
+			System.out.println("A) Manager  B) Developer C) Intern");
+			System.out.println("Select the Employee Post:");
+			String type=sc.nextLine();
+			
+			String nm;
 			if(type.equalsIgnoreCase("Manager")){
 				System.out.println("Enter "+type+" Name: ");
 				nm=sc.nextLine();
