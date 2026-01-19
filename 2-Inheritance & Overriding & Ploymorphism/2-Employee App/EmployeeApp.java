@@ -46,16 +46,16 @@ class Developer extends Employee{
 		double allowance=baseSalary*0.30;
 		double p=numberofProjects*2000;
 		return baseSalary+allowance+p;
-	}
-}
-class Intern extends Employee{
-	Intern(int id, String name, double baseSalary){
-		super(id,name,baseSalary);
-	}
+// 	}
+// }
+// class Intern extends Employee{
+// 	Intern(int id, String name, double baseSalary){
+// 		super(id,name,baseSalary);
+// 	}
 	
-	double calculatesalary(){
-		double allowance=baseSalary*0.50;
-		return baseSalary+allowance;
+// 	double calculatesalary(){
+// 		double allowance=baseSalary*0.50;
+// 		return baseSalary+allowance;
 	}
 }
 
