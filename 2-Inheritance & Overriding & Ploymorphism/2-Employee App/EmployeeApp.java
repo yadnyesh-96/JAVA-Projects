@@ -116,7 +116,17 @@ public class EmployeeApp{
 		double maxSal=0;
 		Employee em2=null;
 		
-		int
+		int countAbove60=0;
+		for(Employee e:em1){
+			double sal=e.calculatesalary();
+			
+			if(sal>maxSal){
+				maxSal=sal;
+				em2=e;
+			}
+			
+			if(sal>60000)countAbove60++;
+			
 			System.out.println("ID 	   :"+e.id);
 			System.out.println("Name   :"+e.name);
 			System.out.println("Salary :"+sal);
