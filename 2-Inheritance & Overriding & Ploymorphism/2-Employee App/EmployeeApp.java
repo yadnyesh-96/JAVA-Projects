@@ -88,7 +88,17 @@ public class EmployeeApp{
 				nm=sc.nextLine();
 			}
 			
-	
+			System.out.println("Enter Base Salary :");
+			double bs=sc.nextDouble();
+			sc.nextLine(); //buffer
+			
+			if(type.equalsIgnoreCase("Manager")){
+				System.out.println("Team Size :");
+				int team=sc.nextInt();
+				
+				sc.nextLine(); //buffer
+				
+				em1[i]=new Manager(Id,nm,bs,team);
 			
 			}else if(type.equalsIgnoreCase("Developer")){
 				System.out.println("Number of Projects :");
