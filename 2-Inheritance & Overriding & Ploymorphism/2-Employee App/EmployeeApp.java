@@ -8,21 +8,21 @@ class Employee{
 	
 	Employee(int id, String name, double baseSalary){
 		this.id=id;
-// 		this.name=name;
-// 		this.baseSalary=baseSalary;
-// 	}
+		this.name=name;
+		this.baseSalary=baseSalary;
+	}
 	
-// 	double calculatesalary(){
-// 		return baseSalary;
-// 	}
-// }
+	double calculatesalary(){
+		return baseSalary;
+	}
+}
 
-// class Manager extends Employee{
+class Manager extends Employee{
 	
-// 	int TeamSize=0;
+	int TeamSize=0;
 	
-// 	Manager(int id, String name, double baseSalary,int TeamSize){
-// 		super(id,name,baseSalary);
+	Manager(int id, String name, double baseSalary,int TeamSize){
+		super(id,name,baseSalary);
 		this.TeamSize=TeamSize;
 	}
 	
