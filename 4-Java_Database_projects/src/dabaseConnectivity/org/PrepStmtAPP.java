@@ -14,18 +14,25 @@ public class PrepStmtAPP {
 		if (conn != null) {
 			System.out.println("Database Connected..");
 			System.out.println("Enter the user Details");
-			nextLine();
+	
 			System.out.println("Enter userId:");
-			int id = nextInt();
+			int id = sc.nextInt();
 			System.out.println("Enter userName:");
-			String name = nextLine();
-			nextLine();
+			String name = sc.next();
+			
 			System.out.println("Enter the Salary:");
-			int salary = nextInt();
+//			nextLine();
+			int salary = sc.nextInt();
 			PreparedStatement stmt = conn.prepareStatement("INSERT INTO users VALUES(?,?,?)");
 			stmt.setInt(1, id);
 			stmt.setString(2, name);
 			stmt.setInt(3, salary);
+			int value = stmt.executeUpdate();
+			if(value>0) {
+				System.out.println("Data inserted into database");
+			}else {
+				System.out.println("Data is not inserted into database ");
+			}
 		} else {
 			System.out.println("Database Connection get failed..!");
 		}
