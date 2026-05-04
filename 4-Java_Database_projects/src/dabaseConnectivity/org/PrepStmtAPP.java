@@ -39,14 +39,4 @@ public class PrepStmtAPP {
 
 	}
 
-	private static String nextLine() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	private static int nextInt() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 }
