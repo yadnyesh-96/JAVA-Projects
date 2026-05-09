@@ -24,8 +24,24 @@ public class ReadCSVfileAPP {
 		
 //		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_db", "root", "pass");
 
+		
+		
 		if (conn != null) {
 			System.out.println("Database Connection Successfull...");
+			
+			FileReader fr = new FileReader("D:\\Desk\\Giri's\\JAVA Projects\\UserDetails.csv");
+			BufferedReader br = new BufferedReader(fr);
+			String line;
+			boolean flag = false;
+			while((line=br.readLine())!=null) {
+				String cols[]= line.split(",");
+				PreparedStatement stmt = conn.prepareStatement("INSERT INTO users VALUES(?,?,?)");
+				stmt.setInt(1,Integer.parseInt(cols[0]));
+				stmt.setString(2,cols[1]);
+				stmt.setInt(3,Integer.parseInt(cols[2]));
+				int value = stmt.executeUpdate();
+				
+			}
 		} else {
 			System.out.println("Databse Connection Failed");
 		}
