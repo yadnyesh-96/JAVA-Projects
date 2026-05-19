@@ -20,6 +20,7 @@ public class servletTest extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		out.println("Hello Developers...!");
+		out.println("<h1 text='bold'>Welcome To JAVA Servltet</h1>");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
