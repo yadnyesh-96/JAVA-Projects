@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TestCode</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="box">
+        <h2 style="text-align: left; width: 90%;">Create a Free Account !</h2>
+        <input type="text" name="username" id="uname" placeholder="Enter Username">
+        <input type="text" name="name" placeholder="Enter Full Name">
+        <input type="text" name="email" id="" placeholder="Enter your email">
+        <input 
+        type="text" 
+        name="mo" 
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="mobileNumber" 
+        placeholder="Enter your contact details"
+        oninput="if(this.value.length>=10){this.value.slice(0,10); this.disabled=true ; this.style.borderColor = 'red';}"
+        >
+        <button class="regBTN">Register</button>
+    </div>
+</body>
+</html>
