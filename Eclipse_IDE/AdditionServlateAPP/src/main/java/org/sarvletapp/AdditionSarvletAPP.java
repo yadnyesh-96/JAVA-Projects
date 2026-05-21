@@ -20,7 +20,12 @@ public class AdditionSarvletAPP extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		out.println("Hello From Developer...!");
+		String s1 = request.getParameter("First");
+		String s2 = request.getParameter("second");
+		int a = Integer.parseInt(s1);
+		int b = Integer.parseInt(s2);
+		int sum = a+b;
+		out.print("Addition is: "+sum);
 	}
 
 	
