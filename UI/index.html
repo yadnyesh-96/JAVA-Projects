@@ -1,27 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TestCode</title>
-    <link rel="stylesheet" href="./style.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 90vh;
+            display: flex;
+        }
+
+        .box {
+            border: solid rgba(183, 220, 252, 0.45);
+            box-shadow: 0px 0px 30px 5px rgba(190, 190, 250, 0.476);
+            color: #838383;
+            margin: auto;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            padding: 55px 15px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        input[type="text"] {
+            width: 90%;
+            font-size: 16px;
+            height: 40px;
+            font-weight: lighter;
+            border-radius: 2px;
+            padding: 5px 15px;
+            font-weight: 400;
+            border-radius: 4px;
+            border-color: rgba(110, 110, 110, 0.245);
+        }
+
+        input[type="text"]::placeholder {
+            color: #acacac;
+            /* Replace with your color */
+        }
+
+        .regBTN {
+            width: 90%;
+            height: 50px;
+            font-size: larger;
+            font-weight: bolder;
+            border: none;
+            color: white;
+            background-color: #0C69D3;
+            transition: 0.1s linear;
+        }
+
+        .regBTN:hover {
+
+            width: 88%;
+            height: 45px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
     <div class="box">
         <h2 style="text-align: left; width: 90%;">Create a Free Account !</h2>
         <input type="text" name="username" id="uname" placeholder="Enter Username">
         <input type="text" name="name" placeholder="Enter Full Name">
         <input type="text" name="email" id="" placeholder="Enter your email">
-        <input 
-        type="text" 
-        name="mo" 
-        inputmode="numeric"
-        pattern="[0-9]*"
-        id="mobileNumber" 
-        placeholder="Enter your contact details"
-        oninput="if(this.value.length>=10){this.value.slice(0,10); this.disabled=true ; this.style.borderColor = 'red';}"
-        >
+        <input type="text" name="mo" inputmode="numeric" pattern="[0-9]*" id="mobileNumber"
+            placeholder="Enter your contact details"
+            oninput="if(this.value.length>=10){this.value.slice(0,10); this.disabled=true ; this.style.borderColor = 'red';}">
         <button class="regBTN">Register</button>
     </div>
 </body>
+
 </html>
