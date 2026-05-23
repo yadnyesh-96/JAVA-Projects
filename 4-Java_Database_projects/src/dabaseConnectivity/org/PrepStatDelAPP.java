@@ -8,7 +8,7 @@ public class PrepStatDelAPP {
 		Scanner sc = new Scanner(System.in);
 		com.mysql.cj.jdbc.Driver d = new com.mysql.cj.jdbc.Driver();
 		DriverManager.registerDriver(d);
-		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_db", "root", "pass");
+	
 		if (conn != null) {
 			System.out.println("Database Connection successfully...");
 			System.out.println("Enter userId to delete");
