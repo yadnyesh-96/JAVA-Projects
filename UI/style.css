@@ -15,10 +15,11 @@
 
 }
 .box-1{
-    width: 35%;
+    width: 30%;
     height: 80vh;
-    border: 1px solid #000;    
-
+    border: 5px solid #b2ebf6a7;    
+    background: #d3f1f770;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -39,10 +40,34 @@
     font-size: 18px;
     height: 35px;
     border-radius: 5px;
-    border: 1px solid #7171714b;
+    border: 1px solid #b2ebf6a7;
 }
 
 
 input::placeholder {
+    font-size: 18px;
+    font-weight: lighter;
     color: rgba(91, 91, 91, 0.377);
+}
+
+.btn-s{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    width: 70%;
+    height: 40px;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 20px;
+    background: #F5962A;
+    border: none;
+}
+button:hover{
+    cursor: pointer;
 }
