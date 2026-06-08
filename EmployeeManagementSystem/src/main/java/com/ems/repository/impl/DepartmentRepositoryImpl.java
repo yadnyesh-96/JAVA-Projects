@@ -1,4 +1,4 @@
-package com.esm.repository.impl;
+package com.ems.repository.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.ems.model.Department;
 import com.ems.repository.DepartmentRepository;
-import com.esm.model.Department;
 import com.esm.utility.DBConnection;
 
 public class DepartmentRepositoryImpl implements DepartmentRepository {
@@ -150,6 +150,31 @@ public class DepartmentRepositoryImpl implements DepartmentRepository {
 		}
 
 		return status;
+	}
+
+	@Override
+	public boolean existsByDepartmentName(String deptName) {
+		boolean res = false;
+
+		try {
+			Connection conn = DBConnection.getConnection();
+
+			String query = "SELECT COUNT(*) FROM department WHERE dept_name=?";
+
+			PreparedStatement ps = conn.prepareStatement(query);
+			ps.setString(1, deptName);
+
+			ResultSet rs = ps.executeQuery();
+
+			if (rs.next()) {
+				res = rs.getInt(1) > 0;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return res;
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.esm.model;
+package com.ems.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,9 +11,9 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Department {
-	
-	private int deptId;
-	private String deptName;
-	private String description;
+
+public class Admin {
+	private int adminId;
+	private String username;
+	private String password;
 }
