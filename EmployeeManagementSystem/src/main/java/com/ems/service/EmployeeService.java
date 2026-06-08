@@ -1,12 +1,12 @@
-package com.ems.repository;
+package com.ems.service;
 
 import java.util.List;
 
 import com.ems.model.Employee;
 
-public interface EmployeeRepository {
+public interface EmployeeService {
 
-	boolean addEmployee(Employee employee);
+	boolean registerEmployee(Employee employee);
 
 	Employee login(String usernameOrEmail, String password);
 
@@ -17,14 +17,10 @@ public interface EmployeeRepository {
 	List<Employee> getAllEmployees();
 
 	boolean updateEmployee(Employee employee);
-	
+
 	boolean updateEmployeeByAdmin(Employee employee);
 
 	boolean deleteEmployee(int empPk);
 
-	boolean existsByUsername(String username);
-
-	boolean existsByEmail(String email);
-
-	String getLastEmployeeId();
+	String generateEmployeeId();
 }
