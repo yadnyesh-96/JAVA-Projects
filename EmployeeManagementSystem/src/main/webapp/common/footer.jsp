@@ -1,12 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+</div>
+
+<footer class="bg-dark text-white text-center p-3 mt-5">
+
+	<p class="mb-0">Employee Database Management System © 2026</p>
+
+</footer>
+
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+	
+</script>
 
 </body>
 </html>
