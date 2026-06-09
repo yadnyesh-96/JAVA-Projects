@@ -1,12 +1,149 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<title>Employee Registration</title>
 </head>
-<body>
 
+<body>
+	<div class="container-fluid">
+		<div class="row justify-content-center m-5">
+
+			<div
+				class="col-md-8 col-sm-6 border p-4 rounded-4 bg-light-subtle  border-warning-subtle shadow-lg">
+
+				<h3 class="text-center mb-4 fw-bold"
+					style="text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px;">
+					Registration Form</h3>
+
+				<form action="<%=request.getContextPath()%>/EmployeeRegistration"
+					method="post">
+
+					<!-- first name and last name  -->
+					<div class="row mb-lg-3">
+
+						<!-- first name  -->
+						<div class="col-lg-6">
+							<label class="form-label fs-6 ps-1 fw-bold" for="fname">First
+								Name :</label> <input class="form-control rounded-0" type="text"
+								name="firstName" id="" placeholder="FirstName" required>
+						</div>
+
+						<!-- last name  -->
+						<div class="col-lg-6">
+							<label class="form-label fs-6 ps-1 fw-bold" for="fname">Last
+								Name :</label> <input class="form-control rounded-0" type="text"
+								name="lastName" id="" placeholder="LastName" required>
+						</div>
+
+					</div>
+
+
+					<!-- email adress and contact number  -->
+					<div class="row mb-lg-3">
+
+						<!-- email address  -->
+						<div class="col-lg-6">
+							<label class="form-label fs-6 ps-1 fw-bold" for="email">Email
+								:</label> <input class="form-control rounded-0" type="email"
+								name="email" id="" placeholder="Email Id" required>
+						</div>
+
+						<!-- contanct or mobile number  -->
+						<div class="col-lg-6">
+							<label class="form-label fs-6 ps-1 fw-bold" for="email">Contact
+								No. :</label> <input class="form-control rounded-0" type="tel"
+								name="mobile" id="" placeholder="Mobile Number" required>
+						</div>
+					</div>
+
+
+					<!-- username and password field  -->
+					<div class="row mb-lg-3">
+						<!-- username  -->
+						<div class="col-lg-6">
+							<label class="form-label fs-6 ps-1 fw-bold" for="uname">Username
+								:</label> <input class="form-control rounded-0" type="text"
+								name="username" id="" placeholder="Username" required>
+						</div>
+
+						<!-- password -->
+						<div class="col-lg-6">
+							<label class="form-label fs-6 ps-1 fw-bold" for="uname">Password
+								:</label> <input class="form-control rounded-0" type="password"
+								name="password" id="" placeholder="Password" required>
+						</div>
+					</div>
+
+					<div class="row mb-lg-3">
+						<div class="col-lg-12">
+
+							<label class="form-label fs-6 ps-1 fw-bold"> Gender : </label>
+
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="gender"
+									id="male" value="Male"> <label class="form-check-label"
+									for="male"> Male </label>
+							</div>
+
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="gender"
+									id="female" value="Female"> <label
+									class="form-check-label" for="female"> Female </label>
+							</div>
+
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="gender"
+									id="other" value="Other"> <label
+									class="form-check-label" for="other"> Other </label>
+							</div>
+
+						</div>
+					</div>
+
+					<!-- department and joining data   -->
+					<div class="row mb-lg-3">
+						<!-- joining data  -->
+						<div class="col-lg-6">
+							<label class="form-label fs-6 ps-1 fw-bold" for="joining data">Joining
+								Date :</label> <input class="form-control rounded-0" type="date"
+								name="joiningDate" id="" placeholder="Joining Date">
+						</div>
+
+						<!-- department selection  -->
+						<div class="col-lg-6">
+							<label class="form-label fs-6 ps-1 fw-bold" for="uname">Department
+								:</label> <select class="form-select rounded-0" name="departmentId"
+								id="">
+								<option selected>Select Department</option>
+								<option value="1">IT</option>
+								<option value="2">HR</option>
+								<option value="3">Finance</option>
+								<option value="4">Marketing</option>
+							</select>
+
+						</div>
+					</div>
+
+					<div class="row mb-lg-3">
+						<div class="col-lg-12 d-flex justify-content-center">
+							<button type="submit"
+								class="btn mt-3 btn-warning border border-dark-subtle fw-semibold fs-5 w-50">Register</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 </body>
+
 </html>
