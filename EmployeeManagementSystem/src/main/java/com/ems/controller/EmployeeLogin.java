@@ -33,7 +33,9 @@ public class EmployeeLogin extends HttpServlet {
 
 			HttpSession session = request.getSession();
 
-			session.setAttribute("logigedInEmployee", emp);
+			session.setAttribute("success", "Login successful");
+
+			session.setAttribute("loggedInEmployee", emp);
 
 			response.sendRedirect(request.getContextPath() + "/employee/dashboard.jsp");
 

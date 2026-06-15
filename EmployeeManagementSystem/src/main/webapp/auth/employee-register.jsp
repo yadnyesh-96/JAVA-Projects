@@ -140,6 +140,8 @@
 							<button type="submit"
 								class="btn mt-3 btn-warning border border-dark-subtle fw-semibold fs-5 w-50">Register</button>
 						</div>
+						
+						<a class="text-center my-2 fw-bold" href="employee-login.jsp">Login</a>
 					</div>
 				</form>
 			</div>

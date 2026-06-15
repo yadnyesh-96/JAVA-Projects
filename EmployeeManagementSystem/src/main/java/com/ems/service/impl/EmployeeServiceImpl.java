@@ -100,6 +100,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 		if (employee == null) {
 			return false;
 		}
+
+		Employee existingEmp = repository.getEmployeeByEmployeeId(employee.getEmployeeId());
+
+		if (existingEmp == null) {
+			System.out.println("Employee not found");
+			return false;
+		}
+
 		return repository.updateEmployeeByAdmin(employee);
 	}
 
