@@ -50,15 +50,12 @@ public class EmployeeRegistration extends HttpServlet {
 		PrintWriter out = response.getWriter();
 
 		if (service.registerEmployee(emp)) {
-			out.print("Registration Successful");
 
 			request.setAttribute("Success", "Registration Successful");
 
 			request.getRequestDispatcher("/auth/employee-login.jsp").forward(request, response);
 
 		} else {
-
-			out.print("Registration Fails");
 
 			request.setAttribute("Failed", "Registration FAild");
 			request.getRequestDispatcher("/auth/employee-register.jsp").forward(request, response);

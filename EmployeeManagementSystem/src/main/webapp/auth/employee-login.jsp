@@ -39,8 +39,8 @@ if (success != null) {
 				method="post">
 				<div class="mb-4">
 					<label class="form-label">Username / Email</label> <input
-						class="form-control" type="email" name="usernameOrEmail" id=""
-						placeholder="email or username">
+						class="form-control" type="usernameOrEmail" name="usernameOrEmail"
+						id="" placeholder="email or username">
 				</div>
 
 				<div class="mb-4">
@@ -52,8 +52,8 @@ if (success != null) {
 				<button class="btn btn-primary w-100 mb-4">Login</button>
 
 				<p class="text-center">
-					Don't have an account?<br> <a href="employee-register.jsp">
-						Register Here </a>
+					Don't have an account?<br> <a
+						href="employee-register.jsp"> Register Here </a>
 				</p>
 			</form>
 		</div>

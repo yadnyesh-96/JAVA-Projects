@@ -28,6 +28,7 @@
 				<form action="<%=request.getContextPath()%>/EmployeeRegistration"
 					method="post">
 
+
 					<!-- first name and last name  -->
 					<div class="row mb-lg-3">
 
