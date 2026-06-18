@@ -20,23 +20,26 @@
 		class="container vh-100 d-flex justify-content-center align-items-center">
 		<div class="card p-4 shadow">
 			<h3 class="text-center mb-4 f-bold">Admin Login</h3>
-			<div class="mb-4 ">
-				<label for="" class="form-label fw-semibold">Username :</label> <input
-					type="text" class="form-control" name="username" id=""
-					placeholder="Username">
-			</div>
 
-			<div class="mb-4">
-				<label for="" class="form-label fw-semibold">Password :</label> <input
-					type="password" class="form-control" name="password" id=""
-					placeholder="Password">
-			</div>
+			<form action="<%=request.getContextPath()%>/adminLogin" method="post">
+				<div class="mb-4 ">
+					<label for="" class="form-label fw-semibold">Username :</label> <input
+						type="text" class="form-control" name="username" id=""
+						placeholder="Username">
+				</div>
 
-			<button class="btn btn-primary w-100 mb-4">Login</button>
+				<div class="mb-4">
+					<label for="" class="form-label fw-semibold">Password :</label> <input
+						type="password" class="form-control" name="password" id=""
+						placeholder="Password">
+				</div>
 
-			<p class="text-center">
-				Don't have an account? contact<br> <a href="sys_admin@emp.com">sysAdmin@emp.com</a>
-			</p>
+				<button class="btn btn-primary w-100 mb-4">Login</button>
+
+				<p class="text-center">
+					Don't have an account? contact<br> <a href="sys_admin@emp.com">sysAdmin@emp.com</a>
+				</p>
+			</form>
 		</div>
 	</div>
 </body>
