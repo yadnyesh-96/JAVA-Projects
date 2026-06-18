@@ -7,8 +7,6 @@ if (emp == null) {
 	response.sendRedirect(request.getContextPath() + "/auth/employee-login.jsp");
 	return;
 }
-
-
 %>
 
 <!DOCTYPE html>
@@ -80,11 +78,11 @@ if (emp == null) {
 
 					<div class="d-flex justify-content-center gap-4 my-3">
 						<a style="background-color: rgb(3, 98, 38); color: white;"
-							class="btn border flex-fill fw-bold">View Profile </a>
-						<button class="btn border fw-bold bg-warning flex-fill">Update
-							Profile</button>
-
-						<a href="<%=request.getContextPath()%>/Logout"
+							class="btn border flex-fill fw-bold">View Profile </a> <a
+							href="<%=request.getContextPath()%>/employee/edit-profile.jsp"
+							style="color: white;"
+							class="btn border fw-bold bg-warning flex-fill">Update
+							ProfileS</a> <a href="<%=request.getContextPath()%>/Logout"
 							style="color: white;"
 							class="btn border fw-bold bg-danger flex-fill">Logout </a>
 					</div>

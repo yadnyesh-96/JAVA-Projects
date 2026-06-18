@@ -75,7 +75,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		if (employeeId == null || employeeId.trim().isEmpty()) {
 			return null;
 		}
-		return null;
+		return repository.getEmployeeByEmployeeId(employeeId);
 	}
 
 	@Override
@@ -91,6 +91,20 @@ public class EmployeeServiceImpl implements EmployeeService {
 			return false;
 		}
 
+		if (employee.getEmployeeId() == null) {
+			System.out.println("Employee id must be reqired");
+			return false;
+		}
+
+		if (employee.getEmail() == null) {
+			System.out.println("Email reuired ");
+			return false;
+		}
+
+		if (employee.getUsername() == null) {
+			System.out.println("Username reqiured");
+			return false;
+		}
 		return repository.updateEmployee(employee);
 	}
 
