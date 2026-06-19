@@ -23,6 +23,16 @@
         .nav-item a:hover {
             color: #702EA9;
         }
+
+        table th {
+            background-color: #CDCDFF !important;
+            border: 1px solid black !important;
+        }
+
+        table td {
+            background-color: #f8f8fc !important;
+            border: 1px solid black !important;
+        }
     </style>
     <title>Admin-Dashboard</title>
 </head>
@@ -38,7 +48,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <h3 class="mb-0 position-absolute start-50 translate-middle-x fw-bold" style="color: #CDCDFF;">
+            <h3 class="mb-0 position-absolute start-50 translate-middle-x fw-bold border-bottom border-1"
+                style="color: #CDCDFF;">
                 Admin Dashboard
             </h3>
 
@@ -74,15 +85,18 @@
 
                     <ul class="navbar-nav flex-grow-1 mt-4">
                         <li class="nav-item">
-                            <a class="ps-2 nav-link active text-white border-bottom" href="#">Admin Dashboard</a>
+                            <a class="ps-2 nav-link active text-white border-bottom" href="#"
+                                onclick="showSection('dashboard')">Admin Dashboard</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="ps-2 nav-link text-white border-bottom" href="#">Employee Details</a>
+                            <a class="ps-2 nav-link text-white border-bottom" href="#"
+                                onclick="showSection('employee')">Employee Details</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="ps-2 nav-link text-white border-bottom" href="#">Departments Details</a>
+                            <a class="ps-2 nav-link text-white border-bottom" href="#"
+                                onclick="showSection('Departments')">Departments Details</a>
                         </li>
 
                         <li class="nav-item dropdown border-bottom">
@@ -104,9 +118,314 @@
 
                 </div>
             </div>
-
         </div>
     </nav>
+
+    <div class="container-fluid mt-5 pt-5">
+
+        <!-- Admin Dashboard Section -->
+        <div id="dashboardSection">
+            <h2 class="fw-bold">Welcome xyz</h2>
+
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="row">
+                        <!-- Admin Information -->
+                        <div class="col-5 border-end">
+                            <div class="row ps-4">
+                                <div class="col-10 border-bottom d-flex">
+                                    <h3 class="fw-bold pe-2">Name :</h3>
+                                    <h3 class="fw-light">Yadnyesh</h3>
+                                </div>
+                            </div>
+
+                            <div class="row ps-4">
+                                <div class="col-10 border-bottom d-flex">
+                                    <h3 class="fw-bold pe-2">Email :</h3>
+                                    <h3 class="fw-light">Yadnyesh@gmail.com</h3>
+                                </div>
+                            </div>
+
+                            <div class="row ps-4">
+                                <div class="col-10 border-bottom d-flex">
+                                    <h3 class="fw-bold pe-2">Role :</h3>
+                                    <h3 class="fw-light">Adminstrator</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- database summary count  -->
+                        <div class="col-7">
+                            <div class="row ps-4">
+                                <div class="col-10 border-bottom d-flex">
+                                    <h3 class="fw-bold pe-2">Database Summary Records</h3>
+                                </div>
+                            </div>
+
+                            <div class="row ps-4">
+                                <div class="col-10 border-bottom d-flex">
+                                    <h3 class="fw-bold pe-2">Total Departments :</h3>
+                                    <h3 class="fw-light">06</h3>
+                                </div>
+                            </div>
+
+                            <div class="row ps-4">
+                                <div class="col-10 border-bottom d-flex">
+                                    <h3 class="fw-bold pe-2 text-success">Total Active Employee :</h3>
+                                    <h3 class="fw-light text-success">28</h3>
+                                </div>
+                            </div>
+                            <div class="row ps-4">
+                                <div class="col-10 border-bottom d-flex">
+                                    <h3 class="fw-bold pe-2 text-danger">Total Not-Active Employee :</h3>
+                                    <h3 class="fw-light text-danger">08</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="row justify-content-center align-items-center">
+                        <!-- department section  -->
+                        <div class="col-5">
+                            <div class="row p-5 border-end">
+
+                                <h4 class="fw-bold border-bottom pb-2">Departments Summary</h4>
+
+                                <div class="col-12 mt-2">
+                                    <!-- department table  -->
+
+                                    <table class="table table-bordered ">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Department Name</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>HR</td>
+                                                <td>Updated HR department</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>IT</td>
+                                                <td>Information Technology</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- employee section  -->
+                        <div class="col-7">
+                            <div class="row p-5">
+
+                                <h4 class="fw-bold border-bottom pb-2">Employee's Summary</h4>
+
+                                <div class="col-12 mt-2">
+                                    <!-- department table  -->
+
+                                    <table class="table table-bordered ">
+                                        <thead>
+                                            <tr>
+                                                <th>Employee ID</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Joining Date</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>EMP001</td>
+                                                <td>Rahul</td>
+                                                <td>Mahajan</td>
+                                                <td>05-02-2026</td>
+                                                <td class="fw-bold text-success">Active</td>
+                                            </tr>
+                                            <tr>
+                                                <td>EMP002</td>
+                                                <td>Harshal</td>
+                                                <td>Patil</td>
+                                                <td>08-05-2024</td>
+                                                <td class="fw-bold text-danger">Not-Active</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Employee Section -->
+        <div id="employeeSection" style="display:none;">
+            <h2>Employee Details</h2>
+
+            <!-- Filters -->
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="Search Employee">
+                </div>
+
+                <div class="col-md-3">
+                    <select class="form-select">
+                        <option>All Departments</option>
+                        <option>IT</option>
+                        <option>HR</option>
+                        <option>Finance</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <select class="form-select">
+                        <option>Status</option>
+                        <option>Active</option>
+                        <option>Not-Active</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Employee Table -->
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Employee ID</th>
+                        <th>Username</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Mobile</th>
+                        <th>Gender</th>
+                        <th>Department</th>
+                        <!-- We have department id from database but for ui we need to show actual department name -->
+                        <th>Joining Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>EMP001</td>
+                        <td>rahul@43</td>
+                        <td>Rahul</td>
+                        <td>Mahajan</td>
+                        <td>rahul@gmail.com</td>
+                        <td>Pass@123</td>
+                        <td>7418529653</td>
+                        <td>Male</td>
+                        <td>IT</td>
+                        <td>2026-06-08</td>
+                        <td class="text-success fw-bold">Active</td>
+                        <td>
+                            <button class="btn bg-warning border border-black fw-bold">Edit</button>
+                            <button class="btn bg-danger border border-black fw-bold text-white">Remove</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>EMP002</td>
+                        <td>manoj@88</td>
+                        <td>Manoj</td>
+                        <td>Salunkhe</td>
+                        <td>manoj_s0@gmail.com</td>
+                        <td>Manoj@856</td>
+                        <td>789456852</td>
+                        <td>Male</td>
+                        <td>Testing</td>
+                        <td>2020-01-05</td>
+                        <td class="text-danger fw-bold">No-Active</td>
+                        <td>
+                            <button class="btn bg-warning border border-black fw-bold">Edit</button>
+                            <button class="btn bg-danger border border-black fw-bold text-white">Remove</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Department section  -->
+        <div id="DepartmentsSection" style="display: none;">
+            <h2 class="mb-4 border-bottom pb-2 border-2">Departments Details</h2>
+
+            <!-- Department Table -->
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Department ID</th>
+                        <th>Department Name</th>
+                        <th>Department Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>IT</td>
+                        <td>Information Technology</td>
+                        <td>
+                            <button class="btn bg-warning border border-black fw-bold">Edit</button>
+                            <button class="btn bg-danger border border-black fw-bold text-white">Remove</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>HR</td>
+                        <td>Human Resource</td>
+                        <td>
+                            <button class="btn bg-warning border border-black fw-bold">Edit</button>
+                            <button class="btn bg-danger border border-black fw-bold text-white">Remove</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
+<script>
+    function showSection(section) {
+
+        document.getElementById('dashboardSection').style.display = 'none';
+        document.getElementById('employeeSection').style.display = 'none';
+        document.getElementById('DepartmentsSection').style.display = 'none';
+
+        if (section === 'dashboard') {
+            document.getElementById('dashboardSection').style.display = 'block';
+        }
+
+        if (section === 'employee') {
+            document.getElementById('employeeSection').style.display = 'block';
+        }
+
+        if (section === 'Departments') {
+            document.getElementById('DepartmentsSection').style.display = 'block';
+        }
+
+        // Close offcanvas automatically
+        const offcanvasElement =
+            document.getElementById('offcanvasNavbar');
+
+        const offcanvas =
+            bootstrap.Offcanvas.getInstance(offcanvasElement);
+
+        if (offcanvas) {
+            offcanvas.hide();
+        }
+    }
+</script>
 
 </html>
