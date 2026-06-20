@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 
 <%@ page import="com.ems.model.Admin"%>
+<%@page import="com.ems.model.Employee"%>
+<%@page import="java.util.*"%>
 
 <%
 Admin adm = (Admin) session.getAttribute("loggedInAdmin");
@@ -12,15 +14,426 @@ if (adm == null) {
 }
 %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 <meta charset="UTF-8">
-<title>Admin-dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+.profile-img {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 2px solid #ddd;
+	/* optional */
+}
+
+.nav-item:hover {
+	background-color: #cdcdff5a;
+}
+
+.nav-item a:hover {
+	color: #702EA9;
+}
+
+table th {
+	background-color: #CDCDFF !important;
+	border: 1px solid black !important;
+}
+
+table td {
+	background-color: #f8f8fc !important;
+	border: 1px solid black !important;
+}
+</style>
+<title>Admin-Dashboard</title>
 </head>
+
 <body>
-	<h2>
-		Welcome Admin,
-		<%=adm.getUsername()%>
-	</h2>
+	<nav class="navbar fixed-top py-3" style="background-color: #702EA9;">
+		<div class="container-fluid">
+
+			<!-- Hamburger at start -->
+			<button class="navbar-toggler me-2"
+				style="background-color: #CDCDFF; border: 2px solid white;"
+				type="button" data-bs-toggle="offcanvas"
+				data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<h3
+				class="mb-0 position-absolute start-50 translate-middle-x fw-bold border-bottom border-1"
+				style="color: #CDCDFF;">Admin Dashboard</h3>
+
+			<!-- Push logout button to right -->
+			<div class="ms-auto">
+				<button class="btn fw-bold text-danger"
+					style="background: #CDCDFF; border: 2px solid white;">Logout</button>
+			</div>
+
+			<!-- Offcanvas -->
+			<div class="offcanvas offcanvas-start"
+				style="background-color: #702EA9;" tabindex="-1"
+				id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+
+				<div class="offcanvas-header" style="background: #CDCDFF;">
+					<h5 class="offcanvas-title fw-bold" style="color: #702EA9;"
+						id="offcanvasNavbarLabel">Admin Menu</h5>
+
+					<button type="button" class="btn-close "
+						data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				</div>
+
+				<div class="offcanvas-body">
+
+					<!-- Profile Section -->
+					<div class="text-center mb-4">
+						<img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+							alt="Profile" class="profile-img">
+
+						<h4 class="mt-3 mb-0 text-white fw-bold"><%=adm.getUsername()%></h4>
+						<h6 class="text-white fw-light fs-6">admin@gmail.com</h6>
+					</div>
+
+					<ul class="navbar-nav flex-grow-1 mt-4">
+						<li class="nav-item"><a
+							class="ps-2 nav-link active text-white border-bottom" href="#"
+							onclick="showSection('dashboard')">Admin Dashboard</a></li>
+
+						<li class="nav-item"><a
+							href="<%=request.getContextPath()%>/EmployeeList"
+							class="ps-2 nav-link text-white border-bottom" 
+							onclick="showSection('employee')">Employee Details</a></li>
+
+						<li class="nav-item"><a
+							class="ps-2 nav-link text-white border-bottom" href="#"
+							onclick="showSection('Departments')">Departments Details</a></li>
+
+						<li class="nav-item dropdown border-bottom"><a
+							class="ps-2 nav-link dropdown-toggle text-white" href="#"
+							role="button" data-bs-toggle="dropdown"> Dropdown </a>
+
+							<ul class="dropdown-menu" style="background-color: #CDCDFF;">
+								<li><a class="dropdown-item" href="#">Action</a></li>
+								<li><a class="dropdown-item" href="#">Another action</a></li>
+								<li>
+									<hr class="dropdown-divider">
+								</li>
+								<li><a class="dropdown-item" href="#">Something else
+										here</a></li>
+							</ul></li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container-fluid mt-5 pt-5">
+
+		<!-- Admin Dashboard Section -->
+		<div id="dashboardSection">
+			<h2 class="fw-bold">Welcome xyz</h2>
+
+			<div class="card mb-3">
+				<div class="card-body">
+					<div class="row">
+						<!-- Admin Information -->
+						<div class="col-5 border-end">
+							<div class="row ps-4">
+								<div class="col-10 border-bottom d-flex">
+									<h3 class="fw-bold pe-2">Name :</h3>
+									<h3 class="fw-light">Yadnyesh</h3>
+								</div>
+							</div>
+
+							<div class="row ps-4">
+								<div class="col-10 border-bottom d-flex">
+									<h3 class="fw-bold pe-2">Email :</h3>
+									<h3 class="fw-light">Yadnyesh@gmail.com</h3>
+								</div>
+							</div>
+
+							<div class="row ps-4">
+								<div class="col-10 border-bottom d-flex">
+									<h3 class="fw-bold pe-2">Role :</h3>
+									<h3 class="fw-light">Adminstrator</h3>
+								</div>
+							</div>
+						</div>
+
+						<!-- database summary count  -->
+						<div class="col-7">
+							<div class="row ps-4">
+								<div class="col-10 border-bottom d-flex">
+									<h3 class="fw-bold pe-2">Database Summary Records</h3>
+								</div>
+							</div>
+
+							<div class="row ps-4">
+								<div class="col-10 border-bottom d-flex">
+									<h3 class="fw-bold pe-2">Total Departments :</h3>
+									<h3 class="fw-light">06</h3>
+								</div>
+							</div>
+
+							<div class="row ps-4">
+								<div class="col-10 border-bottom d-flex">
+									<h3 class="fw-bold pe-2 text-success">Total Active
+										Employee :</h3>
+									<h3 class="fw-light text-success">28</h3>
+								</div>
+							</div>
+							<div class="row ps-4">
+								<div class="col-10 border-bottom d-flex">
+									<h3 class="fw-bold pe-2 text-danger">Total Not-Active
+										Employee :</h3>
+									<h3 class="fw-light text-danger">08</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-body">
+					<div class="row justify-content-center align-items-center">
+						<!-- department section  -->
+						<div class="col-5">
+							<div class="row p-5 border-end">
+
+								<h4 class="fw-bold border-bottom pb-2">Departments Summary</h4>
+
+								<div class="col-12 mt-2">
+									<!-- department table  -->
+
+									<table class="table table-bordered ">
+										<thead>
+											<tr>
+												<th>ID</th>
+												<th>Department Name</th>
+												<th>Description</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>HR</td>
+												<td>Updated HR department</td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td>IT</td>
+												<td>Information Technology</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+
+						<!-- employee section  -->
+						<div class="col-7">
+							<div class="row p-5">
+
+								<h4 class="fw-bold border-bottom pb-2">Employee's Summary</h4>
+
+								<div class="col-12 mt-2">
+									<!-- department table  -->
+
+									<table class="table table-bordered ">
+										<thead>
+											<tr>
+												<th>Employee ID</th>
+												<th>First Name</th>
+												<th>Last Name</th>
+												<th>Joining Date</th>
+												<th>Status</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>EMP001</td>
+												<td>Rahul</td>
+												<td>Mahajan</td>
+												<td>05-02-2026</td>
+												<td class="fw-bold text-success">Active</td>
+											</tr>
+											<tr>
+												<td>EMP002</td>
+												<td>Harshal</td>
+												<td>Patil</td>
+												<td>08-05-2024</td>
+												<td class="fw-bold text-danger">Not-Active</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Employee Section -->
+		<div id="employeeSection" style="display: none;">
+			<h2>Employee Details</h2>
+
+			<!-- Filters -->
+			<div class="row mb-3">
+				<div class="col-md-4">
+					<input type="text" class="form-control"
+						placeholder="Search Employee">
+				</div>
+
+				<div class="col-md-3">
+					<select class="form-select">
+						<option>All Departments</option>
+						<option>IT</option>
+						<option>HR</option>
+						<option>Finance</option>
+					</select>
+				</div>
+
+				<div class="col-md-3">
+					<select class="form-select">
+						<option>Status</option>
+						<option>Active</option>
+						<option>Not-Active</option>
+					</select>
+				</div>
+			</div>
+
+			<!-- Employee Table -->
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Employee ID</th>
+						<th>Username</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
+						<th>Password</th>
+						<th>Mobile</th>
+						<th>Gender</th>
+						<th>Department</th>
+						<!-- We have department id from database but for ui we need to show actual department name -->
+						<th>Joining Date</th>
+						<th>Status</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<%
+					List<Employee> employeeList = (List<Employee>) request.getAttribute("employeeList");
+
+					if (employeeList != null) {
+						for (Employee emp : employeeList) {
+					%>
+
+					<tr>
+						<td><%=emp.getEmployeeId()%></td>
+						<td><%=emp.getUsername()%></td>
+						<td><%=emp.getFirstName()%></td>
+						<td><%=emp.getLastName()%></td>
+						<td><%=emp.getEmail()%></td>
+						<td><%=emp.getPassword()%></td>
+						<td><%=emp.getMobile()%></td>
+						<td><%=emp.getGender()%></td>
+						<td><%=emp.getDepartmentId()%></td>
+						<td><%=emp.getJoiningDate()%></td>
+						<td><%=emp.getStatus()%></td>
+					</tr>
+
+					<%
+					}
+					}
+					%>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- Department section  -->
+		<div id="DepartmentsSection" style="display: none;">
+			<h2 class="mb-4 border-bottom pb-2 border-2">Departments Details</h2>
+
+			<!-- Department Table -->
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Department ID</th>
+						<th>Department Name</th>
+						<th>Department Description</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>IT</td>
+						<td>Information Technology</td>
+						<td>
+							<button class="btn bg-warning border border-black fw-bold">Edit</button>
+							<button
+								class="btn bg-danger border border-black fw-bold text-white">Remove</button>
+						</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>HR</td>
+						<td>Human Resource</td>
+						<td>
+							<button class="btn bg-warning border border-black fw-bold">Edit</button>
+							<button
+								class="btn bg-danger border border-black fw-bold text-white">Remove</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 </body>
+<script>
+	function showSection(section) {
+
+		document.getElementById('dashboardSection').style.display = 'none';
+		document.getElementById('employeeSection').style.display = 'none';
+		document.getElementById('DepartmentsSection').style.display = 'none';
+
+		if (section === 'dashboard') {
+			document.getElementById('dashboardSection').style.display = 'block';
+		}
+
+		if (section === 'employee') {
+			document.getElementById('employeeSection').style.display = 'block';
+		}
+
+		if (section === 'Departments') {
+			document.getElementById('DepartmentsSection').style.display = 'block';
+		}
+
+		// Close offcanvas automatically
+		const offcanvasElement = document.getElementById('offcanvasNavbar');
+
+		const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
+
+		if (offcanvas) {
+			offcanvas.hide();
+		}
+	}
+</script>
+
 </html>
