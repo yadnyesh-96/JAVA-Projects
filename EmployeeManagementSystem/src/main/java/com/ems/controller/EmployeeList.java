@@ -27,8 +27,7 @@ public class EmployeeList extends HttpServlet {
 		List<Employee> empList = service.getAllEmployees();
 
 		request.setAttribute("employeeList", empList);
-
-		response.sendRedirect(request.getContextPath() + "/EmployeeList");
+		request.setAttribute("showEmployeeSection", true);
 
 		request.getRequestDispatcher("/admin/admin-dashboard.jsp").forward(request, response);
 	}
