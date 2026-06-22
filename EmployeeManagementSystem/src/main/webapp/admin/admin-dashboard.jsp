@@ -13,6 +13,10 @@ if (adm == null) {
 	return;
 }
 %>
+
+<%
+Boolean showEmployeeSection = (Boolean) request.getAttribute("showEmployeeSection");
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -109,7 +113,7 @@ table td {
 
 						<li class="nav-item"><a
 							href="<%=request.getContextPath()%>/EmployeeList"
-							class="ps-2 nav-link text-white border-bottom" 
+							class="ps-2 nav-link text-white border-bottom"
 							onclick="showSection('employee')">Employee Details</a></li>
 
 						<li class="nav-item"><a
@@ -139,7 +143,8 @@ table td {
 	<div class="container-fluid mt-5 pt-5">
 
 		<!-- Admin Dashboard Section -->
-		<div id="dashboardSection">
+		<div id="dashboardSection"
+			style="<%=(showEmployeeSection != null && showEmployeeSection) ? "display:none;" : ""%>">
 			<h2 class="fw-bold">Welcome xyz</h2>
 
 			<div class="card mb-3">
@@ -287,7 +292,8 @@ table td {
 		</div>
 
 		<!-- Employee Section -->
-		<div id="employeeSection" style="display: none;">
+		<div id="employeeSection"
+			style="<%=(showEmployeeSection != null && showEmployeeSection) ? "" : "display:none;"%>">
 			<h2>Employee Details</h2>
 
 			<!-- Filters -->
@@ -355,6 +361,8 @@ table td {
 						<td><%=emp.getDepartmentId()%></td>
 						<td><%=emp.getJoiningDate()%></td>
 						<td><%=emp.getStatus()%></td>
+						<td><a href="#" class="btn btn-warning btn-sm">Edit</a> <a
+							href="#" class="btn btn-danger btn-sm">Delete</a></td>
 					</tr>
 
 					<%
