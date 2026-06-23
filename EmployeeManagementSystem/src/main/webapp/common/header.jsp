@@ -48,12 +48,12 @@ footer a:hover {
 						class="nav-link dropdown-toggle " href="#" role="button"
 						data-bs-toggle="dropdown"> Login/Register </a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item fw-semibold" href="#">Employee
-									Registration</a></li>
-							<li><a class="dropdown-item fw-semibold" href="#">Employee
-									Login</a></li>
-							<li><a class="dropdown-item fw-semibold" href="#">Admin
-									Login</a></li>
+							<li><a class="dropdown-item fw-semibold"
+								href="auth/employee-register.jsp">Employee Registration</a></li>
+							<li><a class="dropdown-item fw-semibold"
+								href="auth/employee-login.jsp">Employee Login</a></li>
+							<li><a class="dropdown-item fw-semibold"
+								href="auth/admin-login.jsp">Admin Login</a></li>
 						</ul></li>
 				</ul>
 			</div>

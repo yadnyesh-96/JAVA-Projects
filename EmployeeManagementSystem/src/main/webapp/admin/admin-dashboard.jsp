@@ -1,3 +1,4 @@
+<jsp:include page="/common/header.jsp" />
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -9,11 +10,10 @@
 Admin adm = (Admin) session.getAttribute("loggedInAdmin");
 
 if (adm == null) {
-	response.sendRedirect(request.getContextPath() + "/auth/admin-login.jsp");
+	response.sendRedirect(request.getContextPath() + "/admin/admin-login.jsp");
 	return;
 }
 %>
-
 <%
 Boolean showEmployeeSection = (Boolean) request.getAttribute("showEmployeeSection");
 %>
@@ -78,8 +78,9 @@ table td {
 
 			<!-- Push logout button to right -->
 			<div class="ms-auto">
-				<button class="btn fw-bold text-danger"
-					style="background: #CDCDFF; border: 2px solid white;">Logout</button>
+				<a href="<%=request.getContextPath()%>/AdminLogout"
+					class="btn fw-bold text-danger"
+					style="background: #CDCDFF; border: 2px solid white;"> Logout </a>
 			</div>
 
 			<!-- Offcanvas -->
@@ -443,5 +444,5 @@ table td {
 		}
 	}
 </script>
-
 </html>
+<jsp:include page="/common/footer.jsp" />
