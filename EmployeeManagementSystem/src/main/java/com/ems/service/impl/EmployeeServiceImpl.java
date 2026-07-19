@@ -3,6 +3,7 @@ package com.ems.service.impl;
 import java.util.List;
 
 import com.ems.model.Employee;
+import com.ems.model.GetEmployeeStatusCount;
 import com.ems.repository.EmployeeRepository;
 import com.ems.repository.impl.EmployeeRepositoryImpl;
 import com.ems.service.EmployeeService;
@@ -148,6 +149,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 		num++;
 		return String.format("EMP%03d", num);
+	}
+
+	@Override
+	public GetEmployeeStatusCount getEmployeeStatusCounts() {
+		// TODO Auto-generated method stub
+		return repository.getEmployeeStatusCounts();
 	}
 
 }

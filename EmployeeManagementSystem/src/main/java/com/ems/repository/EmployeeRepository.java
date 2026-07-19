@@ -3,6 +3,7 @@ package com.ems.repository;
 import java.util.List;
 
 import com.ems.model.Employee;
+import com.ems.model.GetEmployeeStatusCount;
 
 public interface EmployeeRepository {
 
@@ -27,4 +28,6 @@ public interface EmployeeRepository {
 	boolean existsByEmail(String email);
 
 	String getLastEmployeeId();
+	
+	GetEmployeeStatusCount getEmployeeStatusCounts();
 }

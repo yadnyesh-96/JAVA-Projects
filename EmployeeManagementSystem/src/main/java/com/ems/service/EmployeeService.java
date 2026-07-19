@@ -3,6 +3,7 @@ package com.ems.service;
 import java.util.List;
 
 import com.ems.model.Employee;
+import com.ems.model.GetEmployeeStatusCount;
 
 public interface EmployeeService {
 
@@ -23,4 +24,6 @@ public interface EmployeeService {
 	boolean deleteEmployee(int empPk);
 
 	String generateEmployeeId();
+	
+	GetEmployeeStatusCount getEmployeeStatusCounts();
 }

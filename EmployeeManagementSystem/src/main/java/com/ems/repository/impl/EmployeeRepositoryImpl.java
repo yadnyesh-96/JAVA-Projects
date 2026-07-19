@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.ems.model.Employee;
+import com.ems.model.GetEmployeeStatusCount;
 import com.ems.repository.EmployeeRepository;
 import com.esm.utility.DBConnection;
 
@@ -363,6 +364,30 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
 			e.printStackTrace();
 		}
 		return employeeId;
+	}
+
+	@Override
+	public GetEmployeeStatusCount getEmployeeStatusCounts() {
+
+		GetEmployeeStatusCount status = new GetEmployeeStatusCount();
+
+		try {
+			Connection conn = DBConnection.getConnection();
+			String query = "SELECT " + "SUM(CASE WHEN status = 'Active' THEN 1 ELSE 0 END) AS activeCount, "
+					+ "SUM(CASE WHEN status = 'Not-Active' THEN 1 ELSE 0 END) AS inactiveCount " + "FROM employee";
+
+			PreparedStatement pstmt = conn.prepareStatement(query);
+			ResultSet rs = pstmt.executeQuery();
+			if (rs.next()) {
+				status.setActiveCount(rs.getInt("activeCount"));
+				status.setInactiveCount(rs.getInt("inactiveCount"));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return status;
 	}
 
 }

@@ -7,11 +7,13 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class Login
@@ -40,9 +42,18 @@ public class Login extends HttpServlet {
 			ResultSet rs = pstmt.executeQuery();
 
 			if (rs.next()) {
-				out.println("<h1>Login Success ...</h1>");
+//				out.println("<h1>Login Success ...</h1>");
+				
+				HttpSession session = request.getSession();
+				
+				
+				RequestDispatcher r = request.getRequestDispatcher("Profile.html");
+				r.forward(request, response);
 			} else {
-				out.println("<h1>Login Failed..! </h1>");
+				out.println("<script>alert('User Not Found. Please register first');</script>");
+				
+				RequestDispatcher r = request.getRequestDispatcher("Registration.html");
+				r.include(request, response);
 			}
 
 		} catch (Exception e) {

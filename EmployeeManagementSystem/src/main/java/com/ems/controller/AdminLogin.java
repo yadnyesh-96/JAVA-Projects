@@ -3,8 +3,11 @@ package com.ems.controller;
 import java.io.IOException;
 
 import com.ems.model.Admin;
+import com.ems.model.GetEmployeeStatusCount;
 import com.ems.service.AdminService;
+import com.ems.service.EmployeeService;
 import com.ems.service.impl.AdminServiceImpl;
+import com.ems.service.impl.EmployeeServiceImpl;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -33,7 +36,6 @@ public class AdminLogin extends HttpServlet {
 			HttpSession session = request.getSession();
 
 			session.setAttribute("loggedInAdmin", adm);
-
 			response.sendRedirect(request.getContextPath() + "/admin/admin-dashboard.jsp");
 
 		} else {

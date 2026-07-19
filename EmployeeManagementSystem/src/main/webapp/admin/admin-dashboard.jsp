@@ -4,7 +4,9 @@
 
 <%@ page import="com.ems.model.Admin"%>
 <%@page import="com.ems.model.Employee"%>
+<%@page import="com.ems.model.Department"%>
 <%@page import="java.util.*"%>
+
 
 <%
 Admin adm = (Admin) session.getAttribute("loggedInAdmin");
@@ -13,9 +15,12 @@ if (adm == null) {
 	response.sendRedirect(request.getContextPath() + "/admin/admin-login.jsp");
 	return;
 }
+
+
 %>
 <%
 Boolean showEmployeeSection = (Boolean) request.getAttribute("showEmployeeSection");
+Boolean showDepartmentSection = (Boolean) request.getAttribute("showDepartmentSection");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -118,7 +123,8 @@ table td {
 							onclick="showSection('employee')">Employee Details</a></li>
 
 						<li class="nav-item"><a
-							class="ps-2 nav-link text-white border-bottom" href="#"
+							href="<%=request.getContextPath()%>/DepartmentList"
+							class="ps-2 nav-link text-white border-bottom"
 							onclick="showSection('Departments')">Departments Details</a></li>
 
 						<li class="nav-item dropdown border-bottom"><a
@@ -145,7 +151,9 @@ table td {
 
 		<!-- Admin Dashboard Section -->
 		<div id="dashboardSection"
-			style="<%=(showEmployeeSection != null && showEmployeeSection) ? "display:none;" : ""%>">
+			style="<%=((showEmployeeSection != null && showEmployeeSection)
+		|| (showDepartmentSection != null && showDepartmentSection)) ? "display:none;" : ""%>">
+
 			<h2 class="fw-bold">Welcome xyz</h2>
 
 			<div class="card mb-3">
@@ -194,14 +202,15 @@ table td {
 								<div class="col-10 border-bottom d-flex">
 									<h3 class="fw-bold pe-2 text-success">Total Active
 										Employee :</h3>
-									<h3 class="fw-light text-success">28</h3>
+									<h3 class="fw-light text-success"><%=request.getAttribute("activeCount")>%</h3>
+
 								</div>
 							</div>
 							<div class="row ps-4">
 								<div class="col-10 border-bottom d-flex">
 									<h3 class="fw-bold pe-2 text-danger">Total Not-Active
 										Employee :</h3>
-									<h3 class="fw-light text-danger">08</h3>
+									<h3 class="fw-light text-danger"><%=request.getAttribute("inactiveCount")%></h3>
 								</div>
 							</div>
 						</div>
@@ -375,7 +384,8 @@ table td {
 		</div>
 
 		<!-- Department section  -->
-		<div id="DepartmentsSection" style="display: none;">
+		<div id="DepartmentsSection"
+			style="<%=(showDepartmentSection != null && showDepartmentSection) ? "" : "display:none;"%>">
 			<h2 class="mb-4 border-bottom pb-2 border-2">Departments Details</h2>
 
 			<!-- Department Table -->
@@ -390,26 +400,22 @@ table td {
 				</thead>
 
 				<tbody>
+					<%
+					List<Department> deptList = (List<Department>) request.getAttribute("departmentList");
+					if (deptList != null) {
+						for (Department dept : deptList) {
+					%>
 					<tr>
-						<td>1</td>
-						<td>IT</td>
-						<td>Information Technology</td>
-						<td>
-							<button class="btn bg-warning border border-black fw-bold">Edit</button>
-							<button
-								class="btn bg-danger border border-black fw-bold text-white">Remove</button>
-						</td>
+						<td><%=dept.getDeptId()%></td>
+						<td><%=dept.getDeptName()%></td>
+						<td><%=dept.getDescription()%></td>
+						<td><a href="#" class="btn btn-warning btn-sm">Edit</a> <a
+							href="#" class="btn btn-danger btn-sm">Delete</a></td>
 					</tr>
-					<tr>
-						<td>2</td>
-						<td>HR</td>
-						<td>Human Resource</td>
-						<td>
-							<button class="btn bg-warning border border-black fw-bold">Edit</button>
-							<button
-								class="btn bg-danger border border-black fw-bold text-white">Remove</button>
-						</td>
-					</tr>
+					<%
+					}
+					}
+					%>
 				</tbody>
 			</table>
 		</div>
