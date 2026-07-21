@@ -1,10 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Subject</title>
+<link rel="stylesheet" href="./CSS/addSubject.css">
 </head>
+
 <body>
 
+	<div class="container">
+		<div class="heding-d">
+			<h1 id="cube"></h1>
+			<h1>Subject Management System</h1>
+		</div>
+		<div class="band">
+			<h1>Subject Managment</h1>
+			<h4>Department of Online Examination</h4>
+		</div>
+
+		<form action="AddSubject" method="post">
+			<div class="sub-form">
+				<div class="label">
+					<h3>Add Subject</h3>
+					<h4>Fill the details below to add a new subject.</h4>
+				</div>
+
+				<h2 class="line"></h2>
+
+				<div class="input-data">
+					<label for="subjename">Subject Name :</label> <input type="text"
+						name="subject" id="" placeholder="Enter Subject Name">
+				</div>
+
+				<div class="input-data">
+					<label for="description">Subject Description :</label>
+					<textarea name="description" id="input"
+						placeholder="Enter Subject Description"></textarea>
+				</div>
+
+				<h2 class="line"></h2>
+
+				<div class="btn-sec">
+					<a><button style="background-color: green;" class="add-btn">AddSubject</button></a>
+					<a><button style="background-color: gray;" class="reset-btn">Reset</button></a>
+					<a><button style="background-color: brown;" class="cancel-btn">Cancel</button></a>
+				</div>
+			</div>
+		</form>
+
+	</div>
+
 </body>
+
 </html>

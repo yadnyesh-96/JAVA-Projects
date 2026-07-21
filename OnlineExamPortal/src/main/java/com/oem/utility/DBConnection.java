@@ -10,7 +10,7 @@ public class DBConnection {
 	private static String password = "pass";
 
 	public static Connection getConnection() throws Exception {
-
+		Class.forName("com.mysql.cj.jdbc.Driver");
 		return DriverManager.getConnection(url, username, password);
 	}
 }
