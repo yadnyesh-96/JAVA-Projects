@@ -1,5 +1,7 @@
 package com.oem.service;
 
+import java.util.List;
+
 import com.oem.model.Subject;
 import com.oem.repository.SubjectRepository;
 import com.oem.repository.SubjectRepositoryImpl;
@@ -20,6 +22,12 @@ public class SubjectServiceImpl implements SubjectService {
 		}
 
 		return repository.addSubject(sub);
+	}
+
+	@Override
+	public List<Subject> getAllSubjects() {
+
+		return repository.getAllSubjects();
 	}
 
 }

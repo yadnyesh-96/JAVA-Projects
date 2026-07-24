@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>List of Subjects</title>
+
+<link rel="stylesheet" href="./CSS/subjectTable.css">
+</head>
+
+<body>
+
+	<div class="container">
+
+		<div class="table-area">
+
+			<h1>Subject List</h1>
+
+			<table id="table" border="1">
+
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Subject Name</th>
+						<th>Subject Description</th>
+					</tr>
+				</thead>
+
+				<tbody id="tbody">
+
+				</tbody>
+
+			</table>
+
+		</div>
+
+	</div>
+
+	<script>
+
+fetch("/OnlineExamPortal/GetAllSubjects")
+.then(response => {
+
+    if(!response.ok){
+        throw new Error("Failed to fetch data");
+    }
+
+    return response.json();
+})
+.then(data => {
+
+    const tbody = document.getElementById("tbody");
+
+    tbody.innerHTML = "";
+
+    data.forEach(subject => {
+
+        let row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${subject.subId}</td>
+            <td>${subject.subName}</td>
+            <td>${subject.subDesc}</td>
+        `;
+
+        tbody.appendChild(row);
+
+    });
+
+})
+.catch(error => {
+    console.error(error);
+});
+
+</script>
+
+</body>
+</html>
