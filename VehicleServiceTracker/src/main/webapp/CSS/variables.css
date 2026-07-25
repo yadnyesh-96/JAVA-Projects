@@ -1,0 +1,46 @@
+:root {
+
+    /* Brand Colors */
+
+    --primary-color: #1E3A8A;
+    --primary-hover: #1D4ED8;
+
+    --secondary-color: #475569;
+
+    --accent-color: #F97316;
+
+    /* Background */
+
+    --background-color: #F8FAFC;
+
+    /* Cards */
+
+    --card-color: #FFFFFF;
+
+    /* Text */
+
+    --text-color: #1F2937;
+
+    --muted-text: #6B7280;
+
+    /* Border */
+
+    --border-color: #E5E7EB;
+
+    /* Success */
+
+    --success-color: #22C55E;
+
+    /* Danger */
+
+    --danger-color: #EF4444;
+
+    /* Radius */
+
+    --border-radius: 12px;
+
+    /* Shadow */
+
+    --box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+}

@@ -1,0 +1,52 @@
+@charset "UTF-8";
+body{
+
+    background: var(--background-color);
+
+    color: var(--text-color);
+
+    font-family: "Segoe UI", sans-serif;
+
+}
+
+.card{
+
+    border:none;
+
+    border-radius:var(--border-radius);
+
+    box-shadow:var(--box-shadow);
+
+}
+
+.card{
+
+    border:none;
+
+    border-radius:var(--border-radius);
+
+    box-shadow:var(--box-shadow);
+
+}
+
+.btn-primary{
+
+    background:var(--primary-color);
+
+    border:none;
+
+}
+
+.btn-primary:hover{
+
+    background:var(--primary-hover);
+
+}
+
+.card-header{
+
+    background:var(--primary-color);
+
+    color:white;
+
+}
