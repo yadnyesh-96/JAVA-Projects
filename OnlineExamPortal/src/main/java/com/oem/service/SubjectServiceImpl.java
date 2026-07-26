@@ -30,4 +30,22 @@ public class SubjectServiceImpl implements SubjectService {
 		return repository.getAllSubjects();
 	}
 
+	@Override
+	public boolean deleteSubject(int subId) {
+
+		return repository.deleteSubject(subId);
+	}
+
+	@Override
+	public Subject getSubject(Subject sub) {
+
+		return repository.getSubject(sub);
+	}
+
+	@Override
+	public boolean updateSubject(Subject sub) {
+
+		return repository.updateSubject(sub);
+	}
+
 }
