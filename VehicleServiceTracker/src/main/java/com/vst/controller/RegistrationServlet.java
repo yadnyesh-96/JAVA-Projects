@@ -72,9 +72,7 @@ public class RegistrationServlet extends HttpServlet {
 		
 		CustomerService service =new CustomerServiceImpl();
 		
-		if(service.registerCustomer(user, customer)) {
-			
-		}
+		
 		
 	}
 

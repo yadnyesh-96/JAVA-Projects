@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow py-3">
+	<div class="container-fluid">
+
+		<!-- Logo and Title -->
+		<a class="navbar-brand d-flex align-items-center"
+			href="adminDashboard.html">
+			<div
+				class="border border-3 rounded-circle d-flex align-items-center justify-content-center"
+				style="width: 60px; height: 60px;">
+				<i class="bi bi-person-fill fs-3"></i>
+			</div>
+
+			<div class="ms-3">
+				<h3 class="mb-0 fw-bold">Online Exam Portal</h3>
+				<small>Welcome Admin </small>
+			</div>
+		</a>
+
+		<!-- Mobile Toggle -->
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+			data-bs-target="#navbarMenu">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<!-- Navigation -->
+		<div class="collapse navbar-collapse justify-content-end"
+			id="navbarMenu">
+
+			<ul class="navbar-nav align-items-lg-center">
+
+				<li class="nav-item me-lg-2 mb-2 mb-lg-0"><a
+					class="btn btn-outline-light" href="adminDashboard.html">
+						Dashboard </a></li>
+
+				<!-- Subjects -->
+				<li class="nav-item dropdown me-lg-2 mb-2 mb-lg-0">
+					<button class="btn btn-outline-light dropdown-toggle" type="button"
+						data-bs-toggle="dropdown">Subjects</button>
+
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="subjectTable.html">
+								View Subjects </a></li>
+						<li><a class="dropdown-item" href="Subject.html"> Add
+								Subject </a></li>
+					</ul>
+				</li>
+
+				<!-- Students -->
+				<li class="nav-item dropdown me-lg-2 mb-2 mb-lg-0">
+					<button class="btn btn-outline-light dropdown-toggle" type="button"
+						data-bs-toggle="dropdown">Students</button>
+
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="Student.html"> Add
+								Student </a></li>
+
+						<li><a class="dropdown-item" href="studentTable.html">
+								View Students </a></li>
+
+						<li><hr class="dropdown-divider"></li>
+
+						<li><a class="dropdown-item" href="#"> Student Results </a></li>
+					</ul>
+				</li>
+
+				<li class="nav-item"><a class="btn btn-danger"
+					href="/OnlineExamPortal/logout"> Logout </a></li>
+
+			</ul>
+
+		</div>
+
+	</div>
+</nav>
