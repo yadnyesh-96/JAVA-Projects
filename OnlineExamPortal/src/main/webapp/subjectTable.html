@@ -5,74 +5,134 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>List of Subjects</title>
 
-<link rel="stylesheet" href="./CSS/subjectTable.css">
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+	rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-light">
 
-	<div class="container">
+	<div id="header"></div>
 
-		<div class="table-area">
+	<div class="container py-5">
 
-			<h1>Subject List</h1>
 
-			<table id="table" border="1">
+		<div class="card shadow">
+			<div class="card-header bg-primary text-white">
+				<h2 class="mb-0 text-center">Subject List</h2>
+			</div>
 
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>Subject Name</th>
-						<th>Subject Description</th>
-					</tr>
-				</thead>
+			<div class="card-body">
 
-				<tbody id="tbody">
+				<div class="table-responsive">
+					<table id="table"
+						class="table table-bordered table-hover table-striped align-middle">
 
-				</tbody>
+						<thead class="table-dark">
+							<tr>
+								<th>ID</th>
+								<th>Subject Name</th>
+								<th>Subject Description</th>
+								<th class="text-center">Action</th>
+							</tr>
+						</thead>
 
-			</table>
+						<tbody id="tbody">
 
+						</tbody>
+
+					</table>
+				</div>
+
+			</div>
 		</div>
 
 	</div>
 
 	<script>
+	
+	const params = new URLSearchParams(window.location.search);
+	const msg = params.get("msg");
+	
+	if (msg === "deleted") {
+	    alert("Subject removed successfully.");
+	} else if (msg === "failed") {
+	    alert("Subject removal failed.");
+	}else if(msg === "success"){
+		alert("Subject Updated successfully.");
+	}
+	
+	
+	fetch("/OnlineExamPortal/header.html")
+	  .then(response => response.text())
+	  .then(data => {
+	    document.getElementById("header").innerHTML = data;
+	  });
+	
+	
+	
+	
+        fetch("/OnlineExamPortal/GetAllSubjects")
+        .then(response => {
 
-fetch("/OnlineExamPortal/GetAllSubjects")
-.then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to fetch data");
+            }
 
-    if(!response.ok){
-        throw new Error("Failed to fetch data");
-    }
+            return response.json();
+        })
+        .then(data => {
 
-    return response.json();
-})
-.then(data => {
+            const tbody = document.getElementById("tbody");
+            tbody.innerHTML = "";
 
-    const tbody = document.getElementById("tbody");
+            data.forEach(subject => {
 
-    tbody.innerHTML = "";
+                let row = document.createElement("tr");
 
-    data.forEach(subject => {
+                row.innerHTML = `
+                    <td>${subject.subId}</td>
+                    <td>${subject.subName}</td>
+                    <td>${subject.subDesc}</td>
+                    <td>
+                    <div class="d-flex justify-content-center gap-2">
 
-        let row = document.createElement("tr");
+                        <a href="/OnlineExamPortal/UpdateSubject?subId=${subject.subId}"
+                           class="btn text-dark btn-warning badge px-3">
+                            Update
+                        </a>
 
-        row.innerHTML = `
-            <td>${subject.subId}</td>
-            <td>${subject.subName}</td>
-            <td>${subject.subDesc}</td>
-        `;
+                        <a href="/OnlineExamPortal/deleteSubject?subId=${subject.subId}"
+                           class="btn btn-danger badge px-3">
+                            Delete
+                        </a>
 
-        tbody.appendChild(row);
+                    </div>
+                </td>
+                `;
 
-    });
+                tbody.appendChild(row);
 
-})
-.catch(error => {
-    console.error(error);
-});
+            });
 
-</script>
+        })
+        .catch(error => {
+            console.error(error);
+
+            document.getElementById("tbody").innerHTML = `
+                <tr>
+                    <td colspan="3" class="text-center text-danger">
+                        Failed to load subjects.
+                    </td>
+                </tr>
+            `;
+        });
+    </script>
+
+	<!-- Bootstrap JS -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
