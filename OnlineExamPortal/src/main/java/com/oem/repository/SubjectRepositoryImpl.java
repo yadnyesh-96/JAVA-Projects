@@ -62,4 +62,78 @@ public class SubjectRepositoryImpl implements SubjectRepository {
 		return ls;
 	}
 
+	// delete subject by id
+	@Override
+	public boolean deleteSubject(int subId) {
+
+		try {
+
+			Connection conn = DBConnection.getConnection();
+
+			PreparedStatement ps = conn.prepareStatement("DELETE FROM subjects WHERE sub_id=?");
+
+			ps.setInt(1, subId);
+
+			int row = ps.executeUpdate();
+
+			if (row > 0) {
+				return true;
+			} else {
+				return false;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return false;
+	}
+
+	@Override
+	public Subject getSubject(Subject sub) {
+
+		Subject sub1 = null;
+		try {
+			Connection conn = DBConnection.getConnection();
+			PreparedStatement ps = conn.prepareStatement("SELECT *FROM subjects WHERE sub_id=? OR sub_name=?");
+
+			ps.setInt(1, sub.getSubId());
+			ps.setString(2, sub.getSubName());
+
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				sub1 = new Subject();
+
+				sub1.setSubId(rs.getInt("sub_id"));
+				sub1.setSubName(rs.getString("sub_name"));
+				sub1.setSubDesc(rs.getString("sub_desc"));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return sub1;
+	}
+
+	@Override
+	public boolean updateSubject(Subject sub) {
+
+		try {
+			Connection conn = DBConnection.getConnection();
+
+			PreparedStatement ps = conn.prepareStatement("UPDATE subjects SET sub_name=?, sub_desc=? WHERE sub_id=?");
+
+			ps.setString(1, sub.getSubName());
+			ps.setString(2, sub.getSubDesc());
+			ps.setInt(3, sub.getSubId());
+
+			return ps.executeUpdate() > 0;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return false;
+	}
+
 }
