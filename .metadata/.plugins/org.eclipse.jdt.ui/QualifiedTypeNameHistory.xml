@@ -13,7 +13,7 @@
     <fullyQualifiedTypeName name="org.mindrot.jbcrypt.BCrypt"/>
     <fullyQualifiedTypeName name="com.vst.util.PasswordUtil"/>
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
-    <fullyQualifiedTypeName name="com.oem.utility.DBConnection"/>
     <fullyQualifiedTypeName name="com.oem.model.Subject"/>
     <fullyQualifiedTypeName name="org.apache.catalina.User"/>
+    <fullyQualifiedTypeName name="com.oem.utility.DBConnection"/>
 </qualifiedTypeNameHistroy>
