@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Add Subject</title>
+<title>Update Question</title>
 
 <!-- Bootstrap CSS -->
 <link
@@ -22,35 +22,33 @@
 		<!-- Form Card -->
 		<div class="card shadow">
 			<div class="card-header bg-dark text-white">
-				<h3 class="mb-0">Add Question</h3>
-				<small>Fill the details below to add a new Question for
-					subjects.</small>
+				<h3 class="mb-0">Update Question</h3>
+				<small>Edit the question details below.</small>
 			</div>
 
 			<div class="card-body">
 
-				<form action="AddQuestion" method="post">
+				<form action="UpdateQuestion" method="post">
+
+					<input type="hidden" id="queId" name="queId">
 
 					<!-- Subject Name -->
 					<div class="mb-3">
-						<label for="subject" class="form-label">Select Subject</label>
+						<label for="subject" class="form-label"> Subject</label>
 
 						<div class="row g-2 align-items-center">
 							<div class="col">
-								<select class="form-select" id="subject" name="subId">
-									<option value="" selected disabled>-- Select Subject
-										--</option>
-								</select>
+								<input type="text" id="subjectName" class="form-control"
+									readonly> <input type="hidden" id="subject"
+									name="subject">
 							</div>
-
 						</div>
 					</div>
 
-					<!-- Add Question -->
+
 					<div class="mb-3">
-						<label for="question" class="form-label">Question</label>
-						<textarea class="form-control" id="question" name="question"
-							rows="3" placeholder="Enter the question" required></textarea>
+						<label class="form-label">Question</label>
+						<textarea id="question" name="question" class="form-control"></textarea>
 					</div>
 
 					<!-- options -->
@@ -87,7 +85,6 @@
 
 					</div>
 
-					<!-- select dropdown options -->
 					<div class="mb-3">
 						<label for="answer" class="form-label">Correct Answer</label> <select
 							class="form-select" id="answer" name="answer" required>
@@ -103,8 +100,8 @@
 					<!-- Buttons -->
 					<div class="d-flex gap-2">
 
-						<button type="submit" class="btn btn-success">Add Question
-						</button>
+						<button type="submit" class="btn btn-primary">Update
+							Question</button>
 
 						<button type="reset" class="btn btn-secondary">Reset</button>
 
@@ -121,6 +118,10 @@
 	</div>
 
 	<script>
+        const params = new URLSearchParams(window.location.search);
+        const queId = params.get("queId");
+		console.log(queId);
+	
         fetch("header.html")
             .then(response => response.text())
             .then(data => {
@@ -132,34 +133,6 @@
                 });
             });
 
-        
-        // get subject list
-        fetch("/OnlineExamPortal/GetAllSubjects")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Failed to fetch subjects");
-            }
-            return response.json();
-        })
-        .then(data => {
-
-            // Populate dropdown
-            const subjectDropdown = document.getElementById("subject");
-
-            data.forEach(subject => {
-            	
-            	
-                const option = document.createElement("option");
-                option.value = subject.subId;      	// ID in value
-                option.textContent = subject.subName; // Subject Name
-                subjectDropdown.appendChild(option);	
-            });
-
-        })
-        .catch(error => {
-            console.error(error);
-        });
-        
 
         const inputs = [
             document.getElementById("option1"),
@@ -190,7 +163,47 @@
             answer.value = this.value;
         });
 
-        
+        fetch("/OnlineExamPortal/GetQuestionById?queId=" + queId)
+            .then(response => response.json())
+            .then(question => {
+
+                document.getElementById("queId").value = question.queId;
+                document.getElementById("subject").value = question.subId;
+                
+                fetch("/OnlineExamPortal/GetAllSubjects")
+                .then(response => response.json())
+                .then(subjects => {
+
+                    const subject = subjects.find(s => s.subId == question.subId);
+
+                    if (subject) {
+                        document.getElementById("subjectName").value = subject.subName;
+                    }
+                });
+
+                document.getElementById("question").value = question.question;
+
+                document.getElementById("option1").value = question.option1;
+                document.getElementById("option2").value = question.option2;
+                document.getElementById("option3").value = question.option3;
+                document.getElementById("option4").value = question.option4;
+
+                // Fill answer dropdown
+                document.getElementById("ans1").textContent = question.option1;
+                document.getElementById("ans1").value = question.option1;
+
+                document.getElementById("ans2").textContent = question.option2;
+                document.getElementById("ans2").value = question.option2;
+
+                document.getElementById("ans3").textContent = question.option3;
+                document.getElementById("ans3").value = question.option3;
+
+                document.getElementById("ans4").textContent = question.option4;
+                document.getElementById("ans4").value = question.option4;
+
+                document.getElementById("answer").value = question.answer;
+            });
+
 
     </script>
 

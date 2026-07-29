@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>List of Subjects</title>
+<title>List of Questions</title>
 
 <!-- Bootstrap CSS -->
 <link
@@ -53,6 +53,11 @@
 							<tr>
 								<th>Subject Name</th>
 								<th>Question</th>
+								<th>Option 1</th>
+								<th>Option 2</th>
+								<th>Option 3</th>
+								<th>Option 4</th>
+								<th>Answer</th>
 								<th class="text-center">Action</th>
 							</tr>
 						</thead>
@@ -70,6 +75,17 @@
 	</div>
 
 	<script>
+	const params = new URLSearchParams(window.location.search);
+	const msg = params.get("msg");
+	
+	if (msg === "deleted") {
+	    alert("Question removed successfully.");
+	} else if (msg === "failed") {
+	    alert("Question removal failed.");
+	}else if(msg == "updated" ){
+		  alert("Question Updated successful");
+	}
+
 
 		// header purpose
             fetch("/OnlineExamPortal/header.html")
@@ -131,34 +147,48 @@
                 })
                 .then(data => {
 
-                    const tbody = document.getElementById("tbody");
-                    tbody.innerHTML = "";
+                	const tbody = document.getElementById("tbody");
+                	tbody.innerHTML = "";
 
-                    data.forEach(question => {
+                	data.forEach((question, index) => {
 
-                        let row = document.createElement("tr");
+                	    let row = document.createElement("tr");
 
-                        row.innerHTML = `
-                            <tr>
-                                <td>${subjectMap[question.subId]}</td>
-                                <td>${question.question}</td>
-                                <td>
-                                    <a href="/OnlineExamPortal/UpdateQuestion?queId=${question.queId}"
-                                       class="btn text-dark btn-warning badge px-3">
-                              
-                                        Update
-                                    </a>
+                	    let subjectCell = "";
 
-                                    <a href="/OnlineExamPortal/DeleteQuestion?queId=${question.queId}"
-                                       class="btn btn-danger badge px-3">
-                                        Delete
-                                    </a>
-                                </td>
-                            </tr>
-                        `;
+                	    // Show subject only in first row
+                	    if (index === 0) {
+                	        subjectCell = `
+                	            <td rowspan="${data.length}" class="align-middle">
+                	                ${subjectMap[question.subId]}
+                	            </td>
+                	        `;
+                	    }
 
-                        tbody.appendChild(row);
-                    });
+                	    row.innerHTML = `
+                	        ${subjectCell}
+                	        <td>${question.question}</td>
+                	        <td>${question.option1}</td>
+                	        <td>${question.option2}</td>
+                	        <td>${question.option3}</td>
+                	        <td>${question.option4}</td>
+                	        <td><strong>${question.answer}</strong></td>
+                	        <td>
+                	            <a href="/OnlineExamPortal/UpdateQuestion?queId=${question.queId}"
+                	               class="btn btn-warning btn-sm">
+                	                Update
+                	            </a>
+
+                	            <a href="/OnlineExamPortal/deleteQuestion?queId=${question.queId}"
+                	               class="btn btn-danger btn-sm"
+                	               onclick="return confirm('Are you sure you want to delete this question?');">
+                	                Delete
+                	            </a>
+                	        </td>
+                	    `;
+
+                	    tbody.appendChild(row);
+                	});
 
                 })
                 .catch(error => console.error(error));

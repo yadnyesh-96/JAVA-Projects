@@ -21,4 +21,22 @@ public class QuestionServiceImpl implements QuestionService {
 		return repository.addQUestion(question);
 	}
 
+	@Override
+	public boolean deleteQuestion(int queId) {
+
+		return repository.deleteQuestion(queId);
+	}
+
+	@Override
+	public Question getQuestionById(int queId) {
+
+		return repository.getQuestionById(queId);
+	}
+
+	@Override
+	public boolean updateQuestion(Question que) {
+
+		return repository.updateQuestion(que);
+	}
+
 }
