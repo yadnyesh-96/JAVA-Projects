@@ -50,6 +50,7 @@ public class AddQuestion extends HttpServlet {
 			
 			out.print("<script>alert('Question Added Successfully');</script>");
 			request.getRequestDispatcher("viewSubjectQuestions.html").forward(request, response);
+			
 		} else {
 			out.print("<script>alert('Failed to Add Question');</script>");
 		}
