@@ -47,6 +47,7 @@ public class AddQuestion extends HttpServlet {
 		QuestionService service = new QuestionServiceImpl();
 
 		if (service.addQUestion(que)) {
+			
 			out.print("<script>alert('Question Added Successfully');</script>");
 			request.getRequestDispatcher("viewSubjectQuestions.html").forward(request, response);
 		} else {
