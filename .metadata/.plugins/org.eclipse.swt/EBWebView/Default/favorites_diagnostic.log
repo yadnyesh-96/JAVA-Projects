@@ -199,3 +199,21 @@
 2026-07-29 07:44:43.647: [INFO] OnDoneLoading sync enabled: 0
 2026-07-30 10:55:01.825: [INFO] OnDoneLoading sync enabled: 0
 2026-07-31 17:10:06.531: [INFO] OnDoneLoading sync enabled: 0
+2026-08-01 04:16:06.596: [INFO] OnDoneLoading sync enabled: 0
+2026-08-01 05:36:45.176: [INFO] OnDoneLoading sync enabled: 0
+2026-08-01 05:39:19.242: [INFO] OnDoneLoading sync enabled: 0
+2026-08-01 05:39:28.528: [INFO] OnDoneLoading sync enabled: 0
+2026-08-01 05:40:04.440: [INFO] OnDoneLoading sync enabled: 0
+2026-08-01 05:54:35.659: [INFO] OnDoneLoading sync enabled: 0
+2026-08-01 06:22:42.303: [INFO] OnDoneLoading sync enabled: 0
+2026-08-01 17:33:28.787: [INFO] OnDoneLoading sync enabled: 0
+2026-08-04 17:17:34.365: [INFO] CurrentProfilePath: D:\Desk\Giri's\JAVA Projects\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-04 17:17:34.365: [INFO] Profiles total count: 1
+2026-08-04 17:17:34.366: [INFO] Profile: name=Profile 1 path=D:\Desk\Giri's\JAVA Projects\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-01T04:16:10.264Z
+2026-08-04 17:17:34.366: [INFO] LastUsedProfileDir: D:\Desk\Giri's\JAVA Projects\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-04 17:17:34.366: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\Desk\Giri's\JAVA Projects\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-01T04:16:10.264Z
+2026-08-04 17:17:34.366: [INFO] OnDoneLoading sync enabled: 0
+2026-08-04 17:17:34.366: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-04 17:17:34.366: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-04 17:17:34.366: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-04 17:22:47.852: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
